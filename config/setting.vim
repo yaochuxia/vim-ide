@@ -52,4 +52,4 @@ set nospell
 
 
 " Emmet 在其他编辑器的触发快捷键一般是 Tab 或 Ctrl+e，如果你更习惯它们，也可以在 .vimrc 文件中加入下一行命令来修改它的触发快捷键：
-let g:user_emmet_expandabbr_key = '<Tab>'
+let g:user_emmet_expandabbr_key = '<Tab>' 

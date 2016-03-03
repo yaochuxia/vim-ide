@@ -51,6 +51,8 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 " Source MYVIMRC
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" 切换菜单
+map <F3> :NERDTreeToggle<CR>
 
 if g:hardcoreMode == 1
 
