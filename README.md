@@ -12,7 +12,7 @@ Only tested on Mac OSx
 
 
 ```shell
-$ git clone https://github.com/krampstudio/webvim.git ~/.vim
+$ git clone https://github.com/jaywcjlove/vim-web.git ~/.vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
 $ vim
 ```
