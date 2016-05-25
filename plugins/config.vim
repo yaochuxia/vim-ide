@@ -128,12 +128,18 @@ call SyntasticSetJsLinter()
 " [> EasyAlign <]
 
 " select paragraph and start easyalign on the left
-nnoremap <leader>a vip<Plug>(EasyAlign)<cr>
-
+" nnoremap <leader>a vip<Plug>(EasyAlign)<cr>
 " Start interactive align to the right
-vmap <leader>a <Plug>(EasyAlign)<cr><right>
+" vmap <leader>a <Plug>(EasyAlign)<cr><right>
 
 let g:easy_align_ignore_groups = ['Comment']
+
+" 对齐插件
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 
 " [> multiple cursor <]

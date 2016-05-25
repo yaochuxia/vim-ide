@@ -37,8 +37,8 @@ set incsearch
 
 
 " copy/paste
-"set paste
-set clipboard=unnamedplus
+"set paste  共享剪切板
+"set clipboard=unnamedplus
 
 " folding manual
 set foldmethod=manual

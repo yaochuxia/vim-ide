@@ -27,5 +27,6 @@ Plug 'moll/vim-node'
 Plug 'syngan/vim-vimlint'
 Plug 'ynkdir/vim-vimlparser'
 Plug 'mattn/emmet-vim'
+Plug 'wavded/vim-stylus'
 
 call plug#end()

@@ -60,8 +60,8 @@ $ vim
 `zt` 将当前行置于屏幕顶端（不是猪头~） 
 `zb` 底端啦~
 
-整页翻页 ctrl-f ctrl-b
-f就是forword b就是backward
+整页翻页 `ctrl-f` `ctrl-b`
+f就是`forword` b就是`backward`
 
 ### 删除命令
 
@@ -227,10 +227,10 @@ zo    #打开折行
 
 ### 代码书写
 
- - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) Comments made easy
- - [VimTrailingWhitespace](https://github.com/bronson/vim-trailing-whitespace) Highlight trailing spaces
- - [Syntastic](https://github.com/scrooloose/syntastic) Syntax check and validation
- - [VimEasyAlign](https://github.com/junegunn/vim-easy-align) Realign pieces of code
+ - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 注释更容易
+ - [VimTrailingWhitespace](https://github.com/bronson/vim-trailing-whitespace) 突出尾随空格
+ - [Syntastic](https://github.com/scrooloose/syntastic) 语法检查
+ - [VimEasyAlign](https://github.com/junegunn/vim-easy-align) 调整部分代码
  - [VimMultipleCursors](https://github.com/terryma/vim-multiple-cursors) Write on multiple lines easily
  - [VimJsBeautify](https://github.com/maksimr/vim-jsbeautify) Reformat JavaScript, HTML and JSON files
  - [VimYankStack](https://github.com/maxbrunsfeld/vim-yankstack) Iterate over yanked stack on paste
@@ -250,6 +250,7 @@ zo    #打开折行
  - [VimCSS3](https://github.com/hail2u/vim-css3-syntax) CSS3 syntax
  - [ScssSyntax](https://github.com/cakebaker/scss-syntax.vim) SCSS syntax
  - [HTML5](https://github.com/othree/html5.vim) HTML5 syntax
+ - [Stylus](https://github.com/wavded/vim-stylus) Stylus 代码高亮
 
 
 ## 插件安装使用说明
