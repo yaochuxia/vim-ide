@@ -28,5 +28,6 @@ Plug 'syngan/vim-vimlint'
 Plug 'ynkdir/vim-vimlparser'
 Plug 'mattn/emmet-vim'
 Plug 'wavded/vim-stylus'
+Plug 'wincent/command-t'
 
 call plug#end()

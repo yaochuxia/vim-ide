@@ -19,6 +19,12 @@ $ vim
 
 **注：** 默认已经安装了前端必备插件。
 
+## 安装插件
+
+- 在`/plugins/def.vim` 中添加 Github 地址，如：`username/repos`。
+- 命令行中运行 `vim`。
+- 输入 `:PlugInstall` 摁 `enter` 进行安装。
+
 ## 使用基础
 
 ### 插入命令
@@ -89,6 +95,7 @@ f就是`forword` b就是`backward`
 `r` → 取代关闭所在处字符  
 `R` → 从光标所在处开始替换字符，摁`ESC`结束  
 `u` → 取消上一步操作  
+`ctrl + r` 返回上一步  
 
 ### 保存退出
 
@@ -106,6 +113,15 @@ f就是`forword` b就是`backward`
 `n` → 搜索指定字符串的下一个出现位置  
 `#` → 搜索指定字符串的上一个出现位置  
 `:%s/old/new/g` → 全文替换指定字符串，`%s` → 全文替换，`1,3s`指定范围替换，`g`全局替换， `c`询问替换  
+
+`:vimgrep /dostuff()/j ../**/*.c` 搜索文件内容  
+
+### 搜索文件
+
+`:lvim /\<\(house\|home\)\>/gj *.txt`  搜索
+`:lw`  列出搜索结果
+
+
 
 ### 文件菜单
 
@@ -224,6 +240,7 @@ zo    #打开折行
  - [VimFugitive](https://github.com/tpope/vim-fugitive) Git integration
  - [VimGitGutter](https://github.com/airblade/vim-gitgutter) Git diff in the gutter
  - [EditorconfigVim](https://github.com/editorconfig/editorconfig-vim) Shared coding conventions
+ - [command-t](https://github.com/wincent/command-t) 文件搜索
 
 ### 代码书写
 
@@ -254,6 +271,13 @@ zo    #打开折行
 
 
 ## 插件安装使用说明
+
+### command-t
+
+[command-t文档](https://github.com/wincent/command-t/blob/master/doc/command-t.txt#L407)  
+
+`~/.vim/plugins/plugged/command-t/ruby/command-t` 目录下面的执行`ruby extconf.rb` 然后执行`make`，`<Leader>t` or |`:CommandT` 来启动搜索。
+
 
 ### Emmet
 
