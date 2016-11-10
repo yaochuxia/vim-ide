@@ -25,6 +25,14 @@ $ vim
 - 命令行中运行 `vim`。
 - 输入 `:PlugInstall` 摁 `enter` 进行安装。
 
+## 更新插件
+
+进入 vim 输入下面命令：
+
+```shell
+:PlugUpdate
+```
+
 ## 使用基础
 
 ### 插入命令
