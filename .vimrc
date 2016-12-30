@@ -93,8 +93,13 @@ Plugin 'altercation/vim-colors-solarized'
 " Plugin 'vim-scripts/phd'
 " <<<
 
+
 " 美化状态栏
-Plugin 'Lokaltog/vim-powerline'
+" Plugin 'Lokaltog/vim-powerline'
+
+" 美化状态栏 和 主题
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " C++ 语法高亮支持
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -260,7 +265,14 @@ set nowrap
 
 " Plugin 'Lokaltog/vim-powerline'
 " 设置状态栏主题风格
-let g:Powerline_colorscheme='solarized256'
+" let g:Powerline_colorscheme='solarized256'
+
+
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" 设置状态栏主题风格
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " <<<<<<<<<<
 
@@ -528,6 +540,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
 " 选中项
 highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+
 
 " 补全功能在注释中同样有效
 let g:ycm_complete_in_comments=1

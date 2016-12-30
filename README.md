@@ -66,6 +66,8 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 
 ## 插件说明
 
+这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。
+
 ### 主题风格
 
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) 主题风格素雅 solarized
@@ -75,8 +77,10 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 ### 使用界面
 
 - [Mango](https://github.com/goatslacker/mango.vim) A nice color scheme
-- [VimAirline](https://github.com/bling/vim-airline) Lean and mean statusbars
+- [VimAirline](https://github.com/bling/vim-airline) 美化状态栏偏好设置
 - [vim-powerline](https://github.com/Lokaltog/vim-powerline) 美化状态栏
+- [vim-airline](https://github.com/vim-airline/vim-airline) 美化状态栏和配置
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) airline主题
 
 ### 管理项目
 
