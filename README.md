@@ -1,14 +1,23 @@
+vim-web
+===
 
 Only tested on Mac OSx
 
-# 目录
+## 目录
 
 - [安装](#安装)
 - [插件管理](#插件管理)
   - [安装插件](#安装插件)
   - [更新插件](#更新插件)
   - [卸载插件](#卸载插件)
+  - [插件说明](#插件说明)
+    - [主题风格](#主题风格)
+    - [使用界面](#使用界面)
+    - [管理项目](#管理项目)
+    - [代码书写](#代码书写)
+    - [代码阅读](#代码阅读)
 - [启动Vim](#启动vim)
+- [常用快捷键](#常用快捷键)
 - [基础使用](#基础使用)
   - [快捷键通配符](#快捷键通配符)
   - [插入命令](#插入命令)
@@ -25,7 +34,7 @@ Only tested on Mac OSx
   - [工程文件菜单](#工程文件菜单)
   - [Tab操作](#tab操作)
 
-# 安装
+## 安装
 
 最新版本的Vim 7.4+  使用(`brew install macvim`)安装，vim 版本更新 `brew install macvim --override-system-vim`
 
@@ -36,11 +45,11 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 
 **注：** 默认已经安装了前端必备插件。`.vimrc` 是控制 vim 行为的配置文件，位于 ~/.vimrc，不论 vim 窗口外观、显示字体，还是操作方式、快捷键、插件属性均可通过编辑该配置文件将 vim 调教成最适合你的编辑器。
 
-# 插件管理
+## 插件管理
 
 这里面使用的Vim插件管理工具[VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim.git)
 
-## 安装插件
+### 安装插件
 
 将配置信息其加入 `~/.vim/.vimrc` 中的`call vundle#begin()` 和 `call vundle#end()` 之间，最后进入 vim 输入下面命令，摁 `enter` 进行安装。
 
@@ -48,7 +57,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 :PluginInstall
 ```
 
-## 更新插件
+### 更新插件
 
 插件更新频率较高，差不多每隔一个月你应该看看哪些插件有推出新版本，批量更新，只需在 vim 中执行下面命令即可。
 
@@ -56,7 +65,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 :PluginUpdate
 ```
 
-## 卸载插件
+### 卸载插件
 
 先在 .vimrc 中注释或者删除对应插件配置信息，然后在 vim 中执行下面命令，即可删除对应插件。
 
@@ -64,17 +73,17 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 :PluginClean
 ```
 
-## 插件说明
+### 插件说明
 
 这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。
 
-### 主题风格
+#### 主题风格
 
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) 主题风格素雅 solarized
 - [molokai](https://github.com/tomasr/molokai) 主题风格多彩 molokai
 - [phd](https://github.com/vim-scripts/phd) 主题风格复古 phd
 
-### 使用界面
+#### 使用界面
 
 - [Mango](https://github.com/goatslacker/mango.vim) A nice color scheme
 - [VimAirline](https://github.com/bling/vim-airline) 美化状态栏偏好设置
@@ -82,7 +91,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 - [vim-airline](https://github.com/vim-airline/vim-airline) 美化状态栏和配置
 - [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) airline主题
 
-### 管理项目
+#### 管理项目
 
 - [NERDTree](https://github.com/scrooloose/nerdtree) Manage your project files
 - [VimFugitive](https://github.com/tpope/vim-fugitive) Git integration
@@ -98,7 +107,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 - [ctrlsf.vim](https://github.com/dyng/ctrlsf.vim) 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
 - [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) 多光标编辑功能
 
-### 代码书写
+#### 代码书写
 
 - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 注释更容易
 - [DrawIt](https://github.com/vim-scripts/DrawIt) ASCII art 风格的注释
@@ -125,7 +134,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 - [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
 - [fcitx.vim](https://github.com/lilydjwg/fcitx.vim) 中/英输入平滑切换
 
-### 代码阅读
+#### 代码阅读
 
 - [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
 - [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
@@ -137,13 +146,33 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 - [ultisnips](https://github.com/SirVer/ultisnips) 模板补全插件
 - [vim-protodef](https://github.com/derekwyatt/vim-protodef) 根据类声明自动生成类实现的代码框架
 
-# 启动Vim
+## 启动Vim
 
 ```bash
 $ vim
 ```
 
-# 基础使用
+## 常用快捷键
+
+这里的快捷键是我配置好的可用的。
+
+```bash
+;fl # 换出菜单列表
+nw  # 窗口切换
+
+# 可以直接在Tab之间切换。
+gt # 后一个Tab标签
+gT # 前一个Tab标签
+;q # 关闭一个标签
+
+ctrl-f # 下一页 f 就是`forword` 
+ctrl-b # 上一页 b 就是`backward`  
+
+;cc 代码注释
+;cu 取消代码注释
+```
+
+## 基础使用
 
 - `inoremap` (Insert Mode)就只在插入(insert)模式下生效
 - `vnoremap` (Visual Mode)只在visual模式下生效
@@ -390,7 +419,7 @@ tn #后一个 tab
 tp #前一个 tab
 
 # 窗口切换
-;nw
+nw
 
 # 标准模式下：
 gt , gT #可以直接在tab之间切换。
