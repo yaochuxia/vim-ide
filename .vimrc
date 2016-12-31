@@ -76,7 +76,7 @@ set wildmenu
 
 
 
-" >>>================插件安装===================
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>插件安装>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 " vundle 环境设置
 filetype off
@@ -103,6 +103,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " C++ 语法高亮支持
 Plugin 'octol/vim-cpp-enhanced-highlight'
+let g:airline_theme='simple'
 
 " 相同缩进的代码关联起来
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -114,6 +115,12 @@ Plugin 'derekwyatt/vim-fswitch'
 
 " 书签可视化的插件
 Plugin 'kshenoy/vim-signature'
+
+" JavaScript 语法 (ES5 and ES6)
+Plugin 'othree/yajs.vim'
+
+" 显示git diff 和 stages/undoes 片段
+Plugin 'airblade/vim-gitgutter'
 
 " 它可以让书签行高亮
 Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
@@ -178,7 +185,7 @@ call vundle#end()
 " filetype on
 " 根据侦测到的不同类型加载对应的插件
 filetype plugin indent on
-" <<<=========================================
+" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
@@ -273,6 +280,7 @@ set nowrap
 " 设置状态栏主题风格
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme='powerlineish'
 
 " <<<<<<<<<<
 
