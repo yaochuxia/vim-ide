@@ -33,6 +33,7 @@ Only tested on Mac OSx
   - [开关注释](#开关注释)
   - [工程文件菜单](#工程文件菜单)
   - [Tab操作](#tab操作)
+  - [HTML操作](#HTML操作)
 
 ## 安装
 
@@ -177,6 +178,7 @@ ctrl-b # 上一页 b 就是`backward`
 - `inoremap` (Insert Mode)就只在插入(insert)模式下生效
 - `vnoremap` (Visual Mode)只在visual模式下生效
 - `nnoremap` (Normal Mode)就在normal模式下(狂按esc后的模式)生效
+- 快捷键`<c-y>,` 标示(<kbd>Ctrl</kbd><kbd>y</kbd><kbd>,</kbd>)
 
 ### 快捷键通配符
 
@@ -430,6 +432,11 @@ Ctrl+ww # 移动到下一个窗口
 Ctrl+wj #移动到下方的窗口
 Ctrl+wk #移动到上方的窗口
 ```
+
+#### HTML操作
+
+便捷操作得益于插件[Emmet.vim](https://github.com/mattn/emmet-vim)。键入 `div>p#foo$*3>a` 然后按快捷键 `<c-y>,` – 表示 `<Ctrl-y>` 后再按逗号【<kbd>Ctrl</kbd><kbd>y</kbd><kbd>,</kbd>】。
+
 
 ### 搜索和搜索替换命令
 
