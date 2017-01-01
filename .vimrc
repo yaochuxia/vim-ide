@@ -87,11 +87,11 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" >>> 配色方案
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'tomasr/molokai'
+" >>> 配色方案" 
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 " Plugin 'vim-scripts/phd'
-" <<<
+
 
 
 " 美化状态栏
@@ -195,11 +195,11 @@ filetype plugin indent on
 set background=dark
 " 素雅 solarized
 " Plugin 'altercation/vim-colors-solarized'
-colorscheme solarized
+" colorscheme solarized
 
 " 多彩 molokai
 " Plugin 'tomasr/molokai' 
-" colorscheme molokai
+colorscheme molokai
 
 " 复古 phd
 " Plugin 'tomasr/molokai' 
