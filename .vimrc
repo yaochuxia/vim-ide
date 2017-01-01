@@ -162,6 +162,9 @@ Plugin 'scrooloose/nerdtree'
 " 显示多个 buffer 对应的 window
 Plugin 'fholgado/minibufexpl.vim'
 
+" 提高HTML和CSS的工作流
+Plugin 'mattn/emmet-vim'
+
 " 快捷键选中 `<>`、`[]`、`{}` 中间的内容
 Plugin 'gcmt/wildfire.vim'
 
@@ -280,7 +283,9 @@ set nowrap
 " 设置状态栏主题风格
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts=1
+let g:airline_theme='PaperColor'
+" let g:airline_theme='powerlineish'
 
 " <<<<<<<<<<
 
