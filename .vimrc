@@ -87,6 +87,9 @@ Plugin 'vim-airline/vim-airline-themes'
 " 支持大多数语言代码高亮
 Plugin 'sheerun/vim-polyglot'
 
+" 文件搜索
+Plugin 'wincent/command-t'
+
 " 相同缩进的代码关联起来
 Plugin 'nathanaelkane/vim-indent-guides'
 

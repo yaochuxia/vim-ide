@@ -172,6 +172,8 @@ gT # 前一个Tab标签
 ctrl-f # 下一页 f 就是`forword` 
 ctrl-b # 上一页 b 就是`backward`  
 
+;t # 通过搜索文件打开文件
+
 # 高科技定位
 ;;b # 光标前代码定位
 ;;e # 光标后代码定位
