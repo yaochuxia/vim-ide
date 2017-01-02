@@ -4,10 +4,8 @@ let mapleader=";"
 " >>>=========文件类型侦测============
 " 文件类型侦测
 
-" 开启文件类型侦测
-filetype on
-" 根据侦测到的不同类型加载对应的插件
-filetype plugin on
+filetype on         " 开启文件类型侦测
+filetype plugin on  " 根据侦测到的不同类型加载对应的插件
 
 " <<<================================
 
@@ -16,38 +14,25 @@ filetype plugin on
 " >>>=========vim 自身（非插件）快捷键============
 " 
 
-" 定义快捷键到行首和行尾
-nmap LB 0
-nmap LE $
+nmap LB 0     " 定义快捷键到行首 / “)” 页尾
+nmap LE $     " 定义快捷键到行尾
 
-" 设置快捷键将选中文本块复制至系统剪贴板
-vnoremap <Leader>y "+y
-" 设置快捷键将系统剪贴板内容粘贴至vim
-nmap <Leader>p "+p
+vnoremap <Leader>y "+y        " 设置快捷键将选中文本块复制至系统剪贴板
+nmap <Leader>p "+p            " 设置快捷键将系统剪贴板内容粘贴至vim
 
-" 定义快捷键关闭当前分割窗口
-nmap <Leader>q :q<CR>
-" 定义快捷键保存当前窗口内容
-nmap <Leader>w :w<CR>
-" 定义快捷键保存所有窗口内容并退出 vim
-nmap <Leader>WQ :wa<CR>:q<CR>
-" 不做任何保存，直接退出 vim
-nmap <Leader>Q :qa!<CR>
+nmap <Leader>q :q<CR>         " 定义快捷键关闭当前分割窗口
+nmap <Leader>w :w<CR>         " 定义快捷键保存当前窗口内容
+nmap <Leader>WQ :wa<CR>:q<CR> " 定义快捷键保存所有窗口内容并退出 vim
+nmap <Leader>Q :qa!<CR>       " 不做任何保存，直接退出 vim
 
 " 设置快捷键遍历子窗口
-" 依次遍历
-nnoremap nw <C-W><C-W>
-" 跳转至右方的窗口
-nnoremap <Leader>lw <C-W>l
-" 跳转至方的窗口
-nnoremap <Leader>hw <C-W>h
-" 跳转至上方的子窗口
-nnoremap <Leader>kw <C-W>k
-" 跳转至下方的子窗口
-nnoremap <Leader>jw <C-W>j
+nnoremap nw <C-W><C-W>        " 依次遍历
+nnoremap <Leader>lw <C-W>l    " 跳转至右方的窗口
+nnoremap <Leader>hw <C-W>h    " 跳转至方的窗口
+nnoremap <Leader>kw <C-W>k    " 跳转至上方的子窗口
+nnoremap <Leader>jw <C-W>j    " 跳转至下方的子窗口
 
-" 定义快捷键在结对符之间跳转
-nmap <Leader>M %
+nmap <Leader>M %              " 定义快捷键在结对符之间跳转
 
 " <<<=========================================
 
@@ -60,17 +45,10 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " >>>================其他===================
 " 其他
 
-" 开启实时搜索功能
-set incsearch
-
-" 搜索时大小写不敏感
-set ignorecase
-
-" 关闭兼容模式
-set nocompatible
-
-" vim 自身命令行模式智能补全
-set wildmenu
+set incsearch       " 开启实时搜索功能
+set ignorecase      " 搜索时大小写不敏感
+set nocompatible    " 关闭兼容模式
+set wildmenu        " vim 自身命令行模式智能补全
 
 " <<<=========================================
 
@@ -93,7 +71,6 @@ Plugin 'tomasr/molokai'
 " Plugin 'vim-scripts/phd'
 
 
-
 " 美化状态栏
 " Plugin 'Lokaltog/vim-powerline'
 
@@ -103,7 +80,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " C++ 语法高亮支持
 Plugin 'octol/vim-cpp-enhanced-highlight'
-let g:airline_theme='simple'
 
 " 相同缩进的代码关联起来
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -181,13 +157,8 @@ Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'lilydjwg/fcitx.vim'
 
 
-" 插件列表结束
-call vundle#end()
-
-" 开启文件类型侦测
-" filetype on
-" 根据侦测到的不同类型加载对应的插件
-filetype plugin indent on
+call vundle#end()          " 插件列表结束
+filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -284,6 +255,7 @@ set nowrap
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts=1
+" let g:airline_theme='simple'
 let g:airline_theme='PaperColor'
 " let g:airline_theme='powerlineish'
 
@@ -294,10 +266,8 @@ let g:airline_theme='PaperColor'
 " >>>>>>>>>>
 " 语法分析
 
-" 开启语法高亮功能
-syntax enable
-" 允许用指定语法高亮配色方案替换默认方案
-syntax on
+syntax enable " 开启语法高亮功能
+syntax on     " 允许用指定语法高亮配色方案替换默认方案
 
 " <<<<<<<<<<
 
@@ -306,17 +276,11 @@ syntax on
 " >>>>>>>>>>
 " 缩进
 
-" 自适应不同语言的智能缩进
-filetype indent on
-
-" 将制表符扩展为空格
-set expandtab
-" 设置编辑时制表符占用空格数
-set tabstop=4
-" 设置格式化时制表符占用空格数
-set shiftwidth=4
-" 让 vim 把连续数量的空格视为一个制表符
-set softtabstop=4
+filetype indent on  " 自适应不同语言的智能缩进
+set expandtab       " 将制表符扩展为空格
+set tabstop=4       " 设置编辑时制表符占用空格数
+set shiftwidth=4    " 设置格式化时制表符占用空格数
+set softtabstop=4   " 让 vim 把连续数量的空格视为一个制表符
 
 
 " Plugin 'nathanaelkane/vim-indent-guides'
@@ -337,11 +301,8 @@ nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 " >>>>>>>>>>
 " 代码折叠
 
-" 基于缩进或语法进行代码折叠
-"set foldmethod=indent
-set foldmethod=syntax
-" 启动 vim 时关闭折叠代码
-set nofoldenable
+set foldmethod=syntax  " 基于缩进或语法进行代码折叠  indent|syntax
+set nofoldenable       " 启动 vim 时关闭折叠代码
 
 " <<<<<<<<<<
 
