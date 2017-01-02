@@ -463,6 +463,20 @@ Ctrl+wk #移动到上方的窗口
 
 便捷操作得益于插件[Emmet.vim](https://github.com/mattn/emmet-vim)。键入 `div>p#foo$*3>a` 然后按快捷键 `<c-y>,` – 表示 `<Ctrl-y>` 后再按逗号【<kbd>Ctrl</kbd><kbd>y</kbd><kbd>,</kbd>】。
 
+按大写的 V 进入 Vim 可视模式，行选取上面三行内容，然后按键 <c-y>,，这时 Vim 的命令行会提示 Tags:，键入ul>li*，然后按 Enter。
+
+`<ctrl+y>d` 根据光标位置选中整个标签  
+`<ctrl+y>D` 根据光标位置选中整个标签内容  
+`<ctrl-y>n` 跳转到下一个编辑点  
+`<ctrl-y>N` 跳转到上一个编辑点  
+`<ctrl-y>i` 更新图片大小  
+`<ctrl-y>m` 合并成一行  
+`<ctrl-y>k` 移除标签对  
+`<ctrl-y>j` 分割/合并标签  
+`<ctrl-y>/` 切换注释  
+`<ctrl-y>a` 从 URL 地址生成锚  
+`<ctrl-y>A` 从 URL 地址生成引用文本  
+
 ## 参考资料
 
 - [vim 大冒险：在游戏中学习 vim](http://vim-adventures.com/)
