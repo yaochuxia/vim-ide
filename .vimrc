@@ -79,7 +79,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 " C++ 语法高亮支持
-Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'octol/vim-cpp-enhanced-highlight'
+
+" JavaScript 语法 (ES5 and ES6)
+" Plugin 'othree/yajs.vim'
+
+" 支持大多数语言代码高亮
+Plugin 'sheerun/vim-polyglot'
 
 " 相同缩进的代码关联起来
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -91,9 +97,6 @@ Plugin 'derekwyatt/vim-fswitch'
 
 " 书签可视化的插件
 Plugin 'kshenoy/vim-signature'
-
-" JavaScript 语法 (ES5 and ES6)
-Plugin 'othree/yajs.vim'
 
 " 显示git diff 和 stages/undoes 片段
 Plugin 'airblade/vim-gitgutter'
@@ -301,7 +304,11 @@ nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 " >>>>>>>>>>
 " 代码折叠
 
-set foldmethod=syntax  " 基于缩进或语法进行代码折叠  indent|syntax
+set foldmethod=syntax   " 基于缩进或语法进行代码折叠 
+                        " 手动建立折叠（manual）、
+                        " 基于缩进进行折叠（indent）、
+                        " 基于语法进行折叠（syntax）、
+                        " 未更改文本构成折叠（diff）等等，
 set nofoldenable       " 启动 vim 时关闭折叠代码
 
 " <<<<<<<<<<

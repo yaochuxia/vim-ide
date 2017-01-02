@@ -138,13 +138,15 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 
 #### 代码阅读
 
-- [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
-- [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
+- 语法高亮
+  - [vim-polyglot](https://github.com/sheerun/vim-polyglot) 支持常见的语法高亮
+  - [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
+  - [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
+  - [VimCSS3](https://github.com/hail2u/vim-css3-syntax) CSS3 syntax
+  - [ScssSyntax](https://github.com/cakebaker/scss-syntax.vim) SCSS syntax
+  - [HTML5](https://github.com/othree/html5.vim) HTML5 syntax
+  - [Stylus](https://github.com/wavded/vim-stylus) Stylus 代码高亮
 - [JavaScriptLibrariesSyntax](https://github.com/othree/javascript-libraries-syntax.vim) 语法高亮的知名的JS库
-- [VimCSS3](https://github.com/hail2u/vim-css3-syntax) CSS3 syntax
-- [ScssSyntax](https://github.com/cakebaker/scss-syntax.vim) SCSS syntax
-- [HTML5](https://github.com/othree/html5.vim) HTML5 syntax
-- [Stylus](https://github.com/wavded/vim-stylus) Stylus 代码高亮
 - [ultisnips](https://github.com/SirVer/ultisnips) 模板补全插件
 - [vim-protodef](https://github.com/derekwyatt/vim-protodef) 根据类声明自动生成类实现的代码框架
 
@@ -188,7 +190,11 @@ u # 选中 - 变小写
 ;cc # 代码注释
 ;cu # 取消代码注释
 
-<C-z>  # 退出Vim
+za # 单个代码折叠
+zM # 折叠左右代码
+zR # 所有代码折叠取消
+
+<c-z>  # 退出Vim
 ```
 
 ## 基础使用
