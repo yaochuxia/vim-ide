@@ -167,8 +167,6 @@ call vundle#end()          " 插件列表结束
 filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-
-
 " >>>>>>>>>>
 " 配色方案
 " 
@@ -191,8 +189,7 @@ colorscheme molokai
 " >>>>>>>>>>
 " 营造专注气氛
 
-" 禁止光标闪烁
-set gcr=a:block-blinkon0
+set gcr=a:block-blinkon0   " 禁止光标闪烁
 
 " 禁止显示滚动条
 set guioptions-=l
@@ -220,21 +217,14 @@ map <silent> <F11> :call ToggleFullscreen()<CR>
 " >>>>>>>>>>
 " 辅助信息
 
-" 总是显示状态栏
-set laststatus=2
-
-" 显示光标当前位置
-set ruler
-
-" 开启行号显示
-set number
-
-" 高亮显示当前行/列
-set cursorline
-set cursorcolumn
-
-" 高亮显示搜索结果
-set hlsearch
+set laststatus=2  " 总是显示状态栏
+set ruler         " 显示光标当前位置
+set number        " 开启行号显示
+set cursorline    " 高亮显示当前 - 行
+set cursorcolumn  " 高亮显示当前 - 列
+set hlsearch      " 高亮显示搜索结果
+" set nocompatible  " 不要使用vi的键盘模式，而是vim自己的 
+" set encoding=utf-8
 
 " <<<<<<<<<<
 
@@ -244,15 +234,18 @@ set hlsearch
 " 其他美化
 
 " 设置 gvim 显示字体
-set guifont=YaHei\ Consolas\ Hybrid\ 10.5
+" set guifont=YaHei\ Consolas\ Hybrid\ 10.5
+" set guifont=Liberation\ Mono\ for\ Powerline\ 10 
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16 
 
-" 禁止折行
-set nowrap
+
+" set nowrap " 禁止折行
 
 
 " Plugin 'Lokaltog/vim-powerline'
 " 设置状态栏主题风格
 " let g:Powerline_colorscheme='solarized256'
+" let g:Powerline_symbols='fancy'
 
 
 " Plugin 'vim-airline/vim-airline'
@@ -260,9 +253,26 @@ set nowrap
 " 设置状态栏主题风格
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+
 let g:airline_powerline_fonts=1
-" let g:airline_theme='simple'
-let g:airline_theme='PaperColor'
+
+
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
+
+let g:airline_theme='jellybeans'
+" let g:airline_theme='PaperColor'
 " let g:airline_theme='powerlineish'
 
 " <<<<<<<<<<
@@ -367,48 +377,20 @@ let g:SignatureMap = {
 
 " Plugin 'majutsushi/tagbar'
 " 基于标签的标识符列表插件
-" 设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_left=1
-" 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
-nnoremap <Leader>ilt :TagbarToggle<CR>
-" 设置标签子窗口的宽度
-let tagbar_width=32
-" tagbar 子窗口中不显示冗余帮助信息
-let g:tagbar_compact=1
+
+let tagbar_left=1                      " 设置 tagbar 子窗口的位置出现在主编辑区的左边
+let tagbar_width=32                    " 设置标签子窗口的宽度
+let g:tagbar_compact=1                 " tagbar 子窗口中不显示冗余帮助信息
+nnoremap <Leader>ilt :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
+
 " 设置 ctags 对哪些代码标识符生成标签
-let g:tagbar_type_cpp = {
-     \ 'ctagstype' : 'c++',
-     \ 'kinds'     : [
-         \ 'c:classes:0:1',
-         \ 'd:macros:0:1',
-         \ 'e:enumerators:0:0', 
-         \ 'f:functions:0:1',
-         \ 'g:enumeration:0:1',
-         \ 'l:local:0:1',
-         \ 'm:members:0:1',
-         \ 'n:namespaces:0:1',
-         \ 'p:functions_prototypes:0:1',
-         \ 's:structs:0:1',
-         \ 't:typedefs:0:1',
-         \ 'u:unions:0:1',
-         \ 'v:global:0:1',
-         \ 'x:external:0:1'
-     \ ],
-     \ 'sro'        : '::',
-     \ 'kind2scope' : {
-         \ 'g' : 'enum',
-         \ 'n' : 'namespace',
-         \ 'c' : 'class',
-         \ 's' : 'struct',
-         \ 'u' : 'union'
-     \ },
-     \ 'scope2kind' : {
-         \ 'enum'      : 'g',
-         \ 'namespace' : 'n',
-         \ 'class'     : 'c',
-         \ 'struct'    : 's',
-         \ 'union'     : 'u'
-     \ }
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
 \ }
 
 " <<<<<<<<<<
@@ -523,7 +505,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 " 菜单
 " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
 " 选中项
-" highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+highlight PmenuSel term=bold ctermbg=24 guibg=#13354A
 
 
 " 补全功能在注释中同样有效
@@ -643,8 +625,8 @@ map <leader>rs :source my.vim<cr>
  
 
 " 设置快捷键实现一键编译及运行
-nmap <Leader>m :wa<CR> :cd build/<CR> :!rm -rf main<CR> :!cmake CMakeLists.txt<CR>:make<CR><CR> :cw<CR> :cd ..<CR>
-nmap <Leader>g :wa<CR>:cd build/<CR>:!rm -rf main<CR>:!cmake CMakeLists.txt<CR>:make<CR><CR>:cw<CR>:cd ..<CR>:!build/main<CR>
+" nmap <Leader>m :wa<CR> :cd build/<CR> :!rm -rf main<CR> :!cmake CMakeLists.txt<CR>:make<CR><CR> :cw<CR> :cd ..<CR>
+" nmap <Leader>g :wa<CR>:cd build/<CR>:!rm -rf main<CR>:!cmake CMakeLists.txt<CR>:make<CR><CR>:cw<CR>:cd ..<CR>:!build/main<CR>
 
 
 " >>>>>>>>>>
