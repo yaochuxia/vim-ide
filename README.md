@@ -75,81 +75,6 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 :PluginClean
 ```
 
-### 插件说明
-
-这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。
-
-#### 主题风格
-
-- [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) 主题风格素雅 solarized
-- [molokai](https://github.com/tomasr/molokai) 主题风格多彩 molokai
-- [phd](https://github.com/vim-scripts/phd) 主题风格复古 phd
-
-#### 使用界面
-
-- [Mango](https://github.com/goatslacker/mango.vim) A nice color scheme
-- [VimAirline](https://github.com/bling/vim-airline) 美化状态栏偏好设置
-- [vim-powerline](https://github.com/Lokaltog/vim-powerline) 美化状态栏
-- [vim-airline](https://github.com/vim-airline/vim-airline) 美化状态栏和配置
-- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) airline主题
-
-#### 管理项目
-
-- [NERDTree](https://github.com/scrooloose/nerdtree) Manage your project files
-- [VimFugitive](https://github.com/tpope/vim-fugitive) Git integration
-- [VimGitGutter](https://github.com/airblade/vim-gitgutter) Git diff in the gutter
-- [EditorconfigVim](https://github.com/editorconfig/editorconfig-vim) Shared coding conventions
-- [command-t](https://github.com/wincent/command-t) 文件搜索
-- [vim-signature](https://github.com/kshenoy/vim-signature) 书签可视化的插件
-- [BOOKMARKS--Mark-and-Highlight-Full-Lines](https://github.com/vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines) 它可以让书签行高亮
-- [tagbar](https://github.com/majutsushi/tagbar) 方法地图导航
-- [indexer.tar.gz](https://github.com/vim-scripts/indexer.tar.gz) 自动生成标签并引入
-  - [DfrankUtil](https://github.com/vim-scripts/DfrankUtil) 上面插件，依赖这个插件
-  - [vimprj](https://github.com/vim-scripts/vimprj) 上面插件，依赖这个插件
-- [ctrlsf.vim](https://github.com/dyng/ctrlsf.vim) 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
-- [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) 多光标编辑功能
-
-#### 代码书写
-
-- [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 注释更容易
-- [DrawIt](https://github.com/vim-scripts/DrawIt) ASCII art 风格的注释
-- [VimTrailingWhitespace](https://github.com/bronson/vim-trailing-whitespace) 突出尾随空格
-- [Syntastic](https://github.com/scrooloose/syntastic) 语法检查
-- [VimEasyAlign](https://github.com/junegunn/vim-easy-align) 调整部分代码
-- [VimMultipleCursors](https://github.com/terryma/vim-multiple-cursors) Write on multiple lines easily
-- [VimJsBeautify](https://github.com/maksimr/vim-jsbeautify) Reformat JavaScript, HTML and JSON files
-- [VimYankStack](https://github.com/maxbrunsfeld/vim-yankstack) Iterate over yanked stack on paste
-- [VimSurround](https://github.com/tpope/vim-surround) Quoting and parenthesizing
-- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) 键而全的、支持模糊搜索的、高速补全的插件
-- [VimForTern](https://github.com/marijnh/tern_for_vim) Smart JavaScript autocompletion
-- [VimNode](https://github.com/moll/vim-node) Navigate through node.js code/modules
-- [VimLint](https://github.com/syngan/vim-vimlint) Linter used by syntastic for VimL
-- [VimLParser](https://github.com/ynkdir/vim-vimlparser) VimL parser (required by VimLint)
-- [emmet-vim](https://github.com/mattn/emmet-vim) 提高HTML和CSS的工作流
-- [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight) C++ 语法高亮支持
-- [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) 相同缩进的代码关联起来
-- [vim-fswitch](https://github.com/derekwyatt/vim-fswitch) 接口文件（MyClass.h）与实现文件（MyClass.cpp）快捷切换的插件
-- [MiniBufExplorer](https://github.com/fholgado/minibufexpl.vim) 显示多个 buffer 对应的 window
-- [wildfire.vim](https://github.com/gcmt/wildfire.vim) 快捷键选中 `<>`、`[]`、`{}` 中间的内容
-- [gundo.vim](https://github.com/sjl/gundo.vim) 让你有机会撤销最近一步或多步操作
-- [vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 快速移动，两次 `<leader>` 作为前缀键
-- [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
-- [fcitx.vim](https://github.com/lilydjwg/fcitx.vim) 中/英输入平滑切换
-
-#### 代码阅读
-
-- 语法高亮
-  - [vim-polyglot](https://github.com/sheerun/vim-polyglot) 支持常见的语法高亮
-  - [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
-  - [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
-  - [VimCSS3](https://github.com/hail2u/vim-css3-syntax) CSS3 syntax
-  - [ScssSyntax](https://github.com/cakebaker/scss-syntax.vim) SCSS syntax
-  - [HTML5](https://github.com/othree/html5.vim) HTML5 syntax
-  - [Stylus](https://github.com/wavded/vim-stylus) Stylus 代码高亮
-- [JavaScriptLibrariesSyntax](https://github.com/othree/javascript-libraries-syntax.vim) 语法高亮的知名的JS库
-- [ultisnips](https://github.com/SirVer/ultisnips) 模板补全插件
-- [vim-protodef](https://github.com/derekwyatt/vim-protodef) 根据类声明自动生成类实现的代码框架
-
 ## 启动Vim
 
 ```bash
@@ -195,6 +120,10 @@ u # 选中 - 变小写
 za # 单个代码折叠
 zM # 折叠左右代码
 zR # 所有代码折叠取消
+
+;i  # 开/关缩进可视化
+>   # 代码锁进 - 选中摁尖括号
+<   # 代码锁进 - 选中摁尖括号
 
 <c-z>  # 退出Vim
 ```
@@ -476,6 +405,83 @@ Ctrl+wk #移动到上方的窗口
 `<ctrl-y>/` 切换注释  
 `<ctrl-y>a` 从 URL 地址生成锚  
 `<ctrl-y>A` 从 URL 地址生成引用文本  
+
+
+## 插件说明
+
+这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。
+
+#### 主题风格
+
+- [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) 主题风格素雅 solarized
+- [molokai](https://github.com/tomasr/molokai) 主题风格多彩 molokai
+- [phd](https://github.com/vim-scripts/phd) 主题风格复古 phd
+
+#### 使用界面
+
+- [Mango](https://github.com/goatslacker/mango.vim) A nice color scheme
+- [VimAirline](https://github.com/bling/vim-airline) 美化状态栏偏好设置
+- [vim-powerline](https://github.com/Lokaltog/vim-powerline) 美化状态栏
+- [vim-airline](https://github.com/vim-airline/vim-airline) 美化状态栏和配置
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) airline主题
+
+#### 管理项目
+
+- [NERDTree](https://github.com/scrooloose/nerdtree) Manage your project files
+- [VimFugitive](https://github.com/tpope/vim-fugitive) Git integration
+- [VimGitGutter](https://github.com/airblade/vim-gitgutter) Git diff in the gutter
+- [EditorconfigVim](https://github.com/editorconfig/editorconfig-vim) Shared coding conventions
+- [command-t](https://github.com/wincent/command-t) 文件搜索
+- [vim-signature](https://github.com/kshenoy/vim-signature) 书签可视化的插件
+- [BOOKMARKS--Mark-and-Highlight-Full-Lines](https://github.com/vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines) 它可以让书签行高亮
+- [tagbar](https://github.com/majutsushi/tagbar) 方法地图导航
+- [indexer.tar.gz](https://github.com/vim-scripts/indexer.tar.gz) 自动生成标签并引入
+  - [DfrankUtil](https://github.com/vim-scripts/DfrankUtil) 上面插件，依赖这个插件
+  - [vimprj](https://github.com/vim-scripts/vimprj) 上面插件，依赖这个插件
+- [ctrlsf.vim](https://github.com/dyng/ctrlsf.vim) 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
+- [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) 多光标编辑功能
+
+#### 代码书写
+
+- [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 注释更容易
+- [DrawIt](https://github.com/vim-scripts/DrawIt) ASCII art 风格的注释
+- [VimTrailingWhitespace](https://github.com/bronson/vim-trailing-whitespace) 突出尾随空格
+- [Syntastic](https://github.com/scrooloose/syntastic) 语法检查
+- [VimEasyAlign](https://github.com/junegunn/vim-easy-align) 调整部分代码
+- [VimMultipleCursors](https://github.com/terryma/vim-multiple-cursors) Write on multiple lines easily
+- [VimJsBeautify](https://github.com/maksimr/vim-jsbeautify) Reformat JavaScript, HTML and JSON files
+- [VimYankStack](https://github.com/maxbrunsfeld/vim-yankstack) Iterate over yanked stack on paste
+- [VimSurround](https://github.com/tpope/vim-surround) Quoting and parenthesizing
+- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) 键而全的、支持模糊搜索的、高速补全的插件
+- [VimForTern](https://github.com/marijnh/tern_for_vim) Smart JavaScript autocompletion
+- [VimNode](https://github.com/moll/vim-node) Navigate through node.js code/modules
+- [VimLint](https://github.com/syngan/vim-vimlint) Linter used by syntastic for VimL
+- [VimLParser](https://github.com/ynkdir/vim-vimlparser) VimL parser (required by VimLint)
+- [emmet-vim](https://github.com/mattn/emmet-vim) 提高HTML和CSS的工作流
+- [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight) C++ 语法高亮支持
+- [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) 相同缩进的代码关联起来
+- [vim-fswitch](https://github.com/derekwyatt/vim-fswitch) 接口文件（MyClass.h）与实现文件（MyClass.cpp）快捷切换的插件
+- [MiniBufExplorer](https://github.com/fholgado/minibufexpl.vim) 显示多个 buffer 对应的 window
+- [wildfire.vim](https://github.com/gcmt/wildfire.vim) 快捷键选中 `<>`、`[]`、`{}` 中间的内容
+- [gundo.vim](https://github.com/sjl/gundo.vim) 让你有机会撤销最近一步或多步操作
+- [vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 快速移动，两次 `<leader>` 作为前缀键
+- [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
+- [fcitx.vim](https://github.com/lilydjwg/fcitx.vim) 中/英输入平滑切换
+
+#### 代码阅读
+
+- 语法高亮
+  - [vim-polyglot](https://github.com/sheerun/vim-polyglot) 支持常见的语法高亮
+  - [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
+  - [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
+  - [VimCSS3](https://github.com/hail2u/vim-css3-syntax) CSS3 syntax
+  - [ScssSyntax](https://github.com/cakebaker/scss-syntax.vim) SCSS syntax
+  - [HTML5](https://github.com/othree/html5.vim) HTML5 syntax
+  - [Stylus](https://github.com/wavded/vim-stylus) Stylus 代码高亮
+- [JavaScriptLibrariesSyntax](https://github.com/othree/javascript-libraries-syntax.vim) 语法高亮的知名的JS库
+- [ultisnips](https://github.com/SirVer/ultisnips) 模板补全插件
+- [vim-protodef](https://github.com/derekwyatt/vim-protodef) 根据类声明自动生成类实现的代码框架
+
 
 ## 参考资料
 
