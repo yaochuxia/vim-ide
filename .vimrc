@@ -162,7 +162,6 @@ Plugin 'Lokaltog/vim-easymotion'
 " 中/英输入平滑切换
 " Plugin 'lilydjwg/fcitx.vim'
 
-
 call vundle#end()          " 插件列表结束
 filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -496,6 +495,29 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 
 " >>>>>>>>>>
+" 快速开关注释
+" Plugin 'scrooloose/nerdcommenter'
+
+" 在注释符默认添加空格
+let g:NERDSpaceDelims = 1
+" 使用紧凑语法美化多行注释
+let g:NERDCompactSexyComs = 1
+" 将行注释符左对齐而不是下面的代码缩进
+let g:NERDDefaultAlign = 'left'
+" 设置语言默认使用备用定界符
+let g:NERDAltDelims_java = 1
+" 添加自定义格式或覆盖默认值。
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" 允许注释和转换空行（注释区域时有用）
+let g:NERDCommentEmptyLines = 1
+" 启用时修整尾随空格注释
+let g:NERDTrimTrailingWhitespace = 1
+
+" <<<<<<<<<<
+
+
+
+" >>>>>>>>>>
 " YCM 补全
 
 " 随键而全的、支持模糊搜索的、高速补全的插件
@@ -537,7 +559,6 @@ let g:ycm_seed_identifiers_with_syntax=1
 
 " <<<<<<<<<<
  
-
 
 " >>>>>>>>>>
 " 由接口快速生成实现框架
