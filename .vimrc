@@ -162,6 +162,9 @@ Plugin 'Lokaltog/vim-easymotion'
 " 中/英输入平滑切换
 " Plugin 'lilydjwg/fcitx.vim'
 
+" 语法高亮多种知名JS库
+Plugin 'othree/javascript-libraries-syntax.vim'
+
 call vundle#end()          " 插件列表结束
 filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -571,6 +574,20 @@ let g:disable_protodef_sorting=1
 " <<<<<<<<<<
 
 
+" >>>>>>>>>>
+" 语法高亮多种知名JS库
+" Plugin 'othree/javascript-libraries-syntax.vim'
+
+autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_react = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
+
+" <<<<<<<<<<
+
+
 
 " >>>>>>>>>>
 " 库信息参考
@@ -594,6 +611,26 @@ nmap <Leader>man :Man 3 <cword><CR>
 " Plugin 'scrooloose/nerdtree'
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
+
+" NERDTree: File highlighting 文件列表，文件名字各种颜色高亮
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade',   'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('md',     'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml',    'magenta', 'none', 'yellow', '#E70350')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf',   'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json',   'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html',   'green', 'none', 'green', '#04E703')
+call NERDTreeHighlightFile('styl',   'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css',    'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js',     'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
+
 " 设置 NERDTree 子窗口宽度
 let NERDTreeWinSize=32
 " 设置 NERDTree 子窗口位置
