@@ -114,7 +114,12 @@ U # 选中 - 变大写
 u # 选中 - 变小写
 ~ # 选中 - 变大写变小写，小写变大写
 
-;cc # 代码注释
+;cc # 代码注释"//"
+;cm # 代码段落注释"/**/"
+;ci # 注释相反，注释的取消注释，没注释的注释
+;cs # 段落注释，注释每行前面加"*"
+;c$ # 光标开始到行结束的位置注释
+;cA # 在行尾部添加注释符"//"
 ;cu # 取消代码注释
 
 za # 单个代码折叠
@@ -124,6 +129,8 @@ zR # 所有代码折叠取消
 ;i  # 开/关缩进可视化
 >   # 代码锁进 - 选中摁尖括号
 <   # 代码锁进 - 选中摁尖括号
+
+:1,24s/header/www/g  # 第1到24行将header替换成www
 
 <c-z>  # 退出Vim
 ```
@@ -428,8 +435,8 @@ Ctrl+wk #移动到上方的窗口
 #### 管理项目
 
 - [NERDTree](https://github.com/scrooloose/nerdtree) Manage your project files
-- [VimFugitive](https://github.com/tpope/vim-fugitive) Git integration
-- [VimGitGutter](https://github.com/airblade/vim-gitgutter) Git diff in the gutter
+- [VimFugitive](https://github.com/tpope/vim-fugitive) Git 集成
+- [VimGitGutter](https://github.com/airblade/vim-gitgutter) Git 集成，强烈推荐！
 - [EditorconfigVim](https://github.com/editorconfig/editorconfig-vim) Shared coding conventions
 - [command-t](https://github.com/wincent/command-t) 文件搜索
 - [vim-signature](https://github.com/kshenoy/vim-signature) 书签可视化的插件
@@ -465,6 +472,7 @@ Ctrl+wk #移动到上方的窗口
 - [wildfire.vim](https://github.com/gcmt/wildfire.vim) 快捷键选中 `<>`、`[]`、`{}` 中间的内容
 - [gundo.vim](https://github.com/sjl/gundo.vim) 让你有机会撤销最近一步或多步操作
 - [vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 快速移动，两次 `<leader>` 作为前缀键
+- [Shougo/neocomplete.vim](https://github.com/Shougo/neocomplete.vim) 强大的自动补全插件
 - [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
 - [fcitx.vim](https://github.com/lilydjwg/fcitx.vim) 中/英输入平滑切换
 
