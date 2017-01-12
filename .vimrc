@@ -168,6 +168,12 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 " 提供快速编写xml/html的能力，如标签自动闭合等
 Plugin 'othree/xml.vim'
 
+" 实时显示颜色的功能，如#FFFFFF
+Plugin 'cakebaker/scss-syntax.vim'
+
+" CSS3 高亮，包括stylus,Less,Sass
+Plugin 'hail2u/vim-css3-syntax'
+
 call vundle#end()          " 插件列表结束
 filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -382,6 +388,8 @@ let g:SignatureMap = {
 
 " Plugin 'majutsushi/tagbar'
 " 基于标签的标识符列表插件
+" 需要安装ctags `brew install ctags`
+" 安装ctags 之后签列表子窗口才能出现
 
 let tagbar_left=1                      " 设置 tagbar 子窗口的位置出现在主编辑区的左边
 let tagbar_width=32                    " 设置标签子窗口的宽度
@@ -710,3 +718,7 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip"]
 nnoremap <Leader>ud :GundoToggle<CR>
 
 " <<<<<<<<<<
+
+
+
+
