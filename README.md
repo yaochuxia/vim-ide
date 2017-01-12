@@ -478,6 +478,7 @@ Ctrl+wk #移动到上方的窗口
 - [Shougo/neocomplete.vim](https://github.com/Shougo/neocomplete.vim) 强大的自动补全插件
 - [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
 - [fcitx.vim](https://github.com/lilydjwg/fcitx.vim) 中/英输入平滑切换
+- [othree/xml.vim](https://github.com/othree/xml.vim) 中/提供快速编写xml/html的能力，如标签自动闭合等
 
 #### 代码阅读
 

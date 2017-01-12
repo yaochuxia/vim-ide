@@ -165,6 +165,9 @@ Plugin 'Lokaltog/vim-easymotion'
 " 语法高亮多种知名JS库
 Plugin 'othree/javascript-libraries-syntax.vim'
 
+" 提供快速编写xml/html的能力，如标签自动闭合等
+Plugin 'othree/xml.vim'
+
 call vundle#end()          " 插件列表结束
 filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
