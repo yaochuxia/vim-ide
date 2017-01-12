@@ -88,6 +88,11 @@ $ vim
 ```bash
 ;fl # 换出菜单列表
 nw  # 窗口切换
+;lw # 跳转至右方的窗口
+;hw # 跳转至左方的窗口
+;kw # 跳转至上方的子窗口
+;jw # 跳转至下方的子窗口
+
 
 # 可以直接在Tab之间切换。
 gt # 后一个Tab标签
@@ -479,6 +484,7 @@ Ctrl+wk #移动到上方的窗口
 - [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
 - [fcitx.vim](https://github.com/lilydjwg/fcitx.vim) 中/英输入平滑切换
 - [othree/xml.vim](https://github.com/othree/xml.vim) 中/提供快速编写xml/html的能力，如标签自动闭合等
+- [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript) 提供js代码的智能缩进，仅使用了他的indent功能
 
 #### 代码阅读
 
@@ -486,7 +492,9 @@ Ctrl+wk #移动到上方的窗口
   - [vim-polyglot](https://github.com/sheerun/vim-polyglot) 支持常见的语法高亮
   - [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
   - [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
-  - [VimCSS3](https://github.com/hail2u/vim-css3-syntax) CSS3 syntax
+  - [vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax) CSS3 高亮，包括stylus,Less,Sass
+  - [vim-css-color](https://github.com/skammer/vim-css-color) css高亮颜色
+  - [gko/vim-coloresque](https://github.com/gko/vim-coloresque) css高亮颜色
   - [ScssSyntax](https://github.com/cakebaker/scss-syntax.vim) SCSS syntax
   - [HTML5](https://github.com/othree/html5.vim) HTML5 syntax
   - [Stylus](https://github.com/wavded/vim-stylus) Stylus 代码高亮
@@ -498,3 +506,4 @@ Ctrl+wk #移动到上方的窗口
 ## 参考资料
 
 - [vim 大冒险：在游戏中学习 vim](http://vim-adventures.com/)
+- [css-color stopped working after updating Vim to 7.4](https://github.com/ap/vim-css-color/issues/29)
