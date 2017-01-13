@@ -490,7 +490,7 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 
 ### 快速移动
 
-[Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
+[Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 把满足条件的位置用 [;A~Za~z] 间的标签字符标出来，找到你想去的位置再键入对应标签字符即可快速到达。
 
 ```bash
 ;;b # 光标前代码定位
@@ -593,3 +593,4 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 ## 其它人的vimrc配置
 
 - [luofei614/vim-plug](https://github.com/luofei614/vim-plug/blob/master/.vimrc)
+- [yangyangwithgnu/use_vim_as_ide](https://github.com/yangyangwithgnu/use_vim_as_ide/blob/master/.vimrc)
