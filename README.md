@@ -34,6 +34,10 @@ Only tested on Mac OSx
   - [工程文件菜单](#工程文件菜单)
   - [Tab操作](#tab操作)
   - [HTML操作](#HTML操作)
+- [搜索查找](#搜索查找)
+  - [文件搜索](#文件搜索)
+  - [搜索文本内容](#搜索文本内容)
+  - [快速移动](#快速移动)
 - [参考资料](#参考资料)
 
 ## 安装
@@ -43,13 +47,34 @@ Only tested on Mac OSx
 ```shell
 $ git clone https://github.com/jaywcjlove/vim-web.git ~/.vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
+
+# 上面执行完成之后
+# 开始下载安装插件
+$ vim # 在vim中运行 ":PluginInstall"
+
+# 上面插件安装完成之后执行下面内容
+# command-t 文件搜索插件安装
+$ cd ~/.vim/plugged/command-t 
+$ rake make
 ```
 
 **注：** 默认已经安装了前端必备插件。`.vimrc` 是控制 vim 行为的配置文件，位于 ~/.vimrc，不论 vim 窗口外观、显示字体，还是操作方式、快捷键、插件属性均可通过编辑该配置文件将 vim 调教成最适合你的编辑器。
 
+### 查看配置位置
+
+```
+# 进入vim输入下面字符
+:echo $MYVIMRC
+```
+
 ## 插件管理
 
-这里面使用的Vim插件管理工具[VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim.git)
+这里面刚开始使用的Vim插件管理工具[VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim.git)，后面为了大家安装方便，使用了 [junegunn/vim-plug](https://github.com/junegunn/vim-plug)，这个插件管理工具，俺十分不喜欢，多了个 `autoload` 目录，安装过程也奇丑无比，安装快速，所以就使用它吧，下面命令更新安装的 `plug.vim`，默认已经有了不需要这一步。
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 ### 安装插件
 
@@ -104,7 +129,7 @@ ctrl-b # 上一页 b 就是`backward`
 
 ;t # 通过搜索文件打开文件
 
-# 高科技定位
+# 快速文本内定位
 ;;b # 光标前代码定位
 ;;e # 光标后代码定位
 ;;f # 光标后代码定位 <搜索自负> 出现定位信息
@@ -422,9 +447,62 @@ Ctrl+wk #移动到上方的窗口
 `<ctrl-y>A` 从 URL 地址生成引用文本  
 
 
+## 搜索查找
+
+### 文件搜索
+
+搜索有两个插件可以使用 [wincent/command-t](https://github.com/wincent/command-t) 和 [junegunn/fzf](https://github.com/junegunn/fzf)，`fzf`没有下载下来，这里在使用 `command-t` ，使用的时候记得，进入目录 `cd ~/.vim/plugged/command-t` 运行 `rake make`。
+
+```bash
+;t # 启动搜索文件
+```
+
+### 搜索文本内容
+
+[dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim)，在插件完成安装之后，需要安装另外的工具，才能运行
+
+```bash
+brew install ripgrep
+
+# 上面安装好了之后，在.vimrc中配置下面内容
+# 快捷键速记法：search in project
+let g:ctrlsf_ackprg = 'rg' 
+# 设置快捷键
+nnoremap <Leader>sp :CtrlSF<CR>
+# 选中搜索 - 文本中选中关键字
+vmap     <Leader>sp <Plug>CtrlSFVwordPath
+# 选中搜索 - 结果列表
+vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
+```
+
+基本使用方法
+
+```bash
+:CtrlSF pattern dir  # 如果后面不带 dir 则默认是 . 当前目录搜索 
+# 使用 j k h l 浏览CtrlSP窗口  使用 Ctrl + j/k 在匹配项中跳转。
+# 使用 q 则退出 CtrlSP窗口
+# 使用 p 
+```
+
+### 快速移动
+
+[Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
+
+```bash
+;;b # 光标前代码定位
+;;e # 光标后代码定位
+;;f # 光标后代码定位 <搜索自负> 出现定位信息
+;;F # 光标前代码定位 <搜索自负> 出现定位信息
+```
+
 ## 插件说明
 
 这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。
+
+#### 插件管理工具
+
+- [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
+- [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 
 #### 主题风格
 
@@ -502,8 +580,12 @@ Ctrl+wk #移动到上方的窗口
 - [ultisnips](https://github.com/SirVer/ultisnips) 模板补全插件
 - [vim-protodef](https://github.com/derekwyatt/vim-protodef) 根据类声明自动生成类实现的代码框架
 
-
 ## 参考资料
 
 - [vim 大冒险：在游戏中学习 vim](http://vim-adventures.com/)
+- [VimScript学会如何自定义Vim编辑器](http://learnvimscriptthehardway.onefloweroneworld.com/)
 - [css-color stopped working after updating Vim to 7.4](https://github.com/ap/vim-css-color/issues/29)
+
+## 其它人的vimrc配置
+
+- [luofei614/vim-plug](https://github.com/luofei614/vim-plug/blob/master/.vimrc)

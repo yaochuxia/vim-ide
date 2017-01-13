@@ -56,125 +56,128 @@ set wildmenu        " vim 自身命令行模式智能补全
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>插件安装>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-" vundle 环境设置
+" plug 环境设置
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-" vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
-call vundle#begin()
+" set rtp+=~/.vim/plugged
+" vim-plug 管理的插件列表必须位于 plug#begin() 和 plug#end() 之间
+" 制定插件安装目录 (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
 
-
-Plugin 'VundleVim/Vundle.vim'
 
 " >>> 配色方案" 
-" Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-" Plugin 'vim-scripts/phd'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+" Plug 'vim-scripts/phd'
 
 
 " 美化状态栏
-" Plugin 'Lokaltog/vim-powerline'
+" Plug 'Lokaltog/vim-powerline'
 
 " 美化状态栏 和 主题
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " C++ 语法高亮支持
-" Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plug 'octol/vim-cpp-enhanced-highlight'
 
 " JavaScript 语法 (ES5 and ES6)
-" Plugin 'othree/yajs.vim'
+" Plug 'othree/yajs.vim'
 
 " 支持大多数语言代码高亮
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
 " 文件搜索
-Plugin 'wincent/command-t'
+Plug 'wincent/command-t'
+
+" 下面这个插件可取代Command-T 但是现在暂时不支持目录忽略，所以先暂时不用
+" 还有就是安装下载不下来啊
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 " 相同缩进的代码关联起来
-Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " 我习惯把类的接口和实现分在不同文件中，常有在接口文件（MyClass.h）和实现文件（MyClass.cpp）中来回切换的操作。
 " 你当然可以先分别打开接口文件和实现文件，再手动切换，但效率不高。
 " 我希望，假如在接口文件中，vim 自动帮我找到对应的实现文件，当键入快捷键，在新 buffer 中打开对应实现文件。
-Plugin 'derekwyatt/vim-fswitch'
+Plug 'derekwyatt/vim-fswitch'
 
 " 书签可视化的插件
-Plugin 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'
 
 " 显示git diff 和 stages/undoes 片段
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " 它可以让书签行高亮
-Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+Plug 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 
 " 基于标签的标识符列表插件
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " 如何自动生成标签并引入
-Plugin 'vim-scripts/indexer.tar.gz'
+Plug 'vim-scripts/indexer.tar.gz'
 " 上面插件，依赖下面两个插件
-Plugin 'vim-scripts/DfrankUtil'
-Plugin 'vim-scripts/vimprj'
+Plug 'vim-scripts/DfrankUtil'
+Plug 'vim-scripts/vimprj'
 
-" 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
-Plugin 'dyng/ctrlsf.vim'
+" 上下文插件，例如搜索到关键字，中间缩略，展示一段上下文
+Plug 'dyng/ctrlsf.vim'
 
 " 多光标编辑功能
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " 快速开关注释
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " ASCII art 风格的注释
-Plugin 'vim-scripts/DrawIt'
+Plug 'vim-scripts/DrawIt'
 
 " 模板补全插件
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 " 根据类声明自动生成类实现的代码框架
-Plugin 'derekwyatt/vim-protodef'
+Plug 'derekwyatt/vim-protodef'
 
 " 查看文件列表
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " 显示多个 buffer 对应的 window
-Plugin 'fholgado/minibufexpl.vim'
+Plug 'fholgado/minibufexpl.vim'
 
 " 提高HTML和CSS的工作流
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 " 快捷键选中 `<>`、`[]`、`{}` 中间的内容
-Plugin 'gcmt/wildfire.vim'
+Plug 'gcmt/wildfire.vim'
 
 " 让你有机会撤销最近一步或多步操作
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 
 " 快速移动，两次 `<leader>` 作为前缀键
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 
 " 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
-" Plugin 'suan/vim-instant-markdown'
+" Plug 'suan/vim-instant-markdown'
 
 " 中/英输入平滑切换
-" Plugin 'lilydjwg/fcitx.vim'
+" Plug 'lilydjwg/fcitx.vim'
 
 " 语法高亮多种知名JS库
-Plugin 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 
 " 提供快速编写xml/html的能力，如标签自动闭合等
-Plugin 'othree/xml.vim'
+Plug 'othree/xml.vim'
 
 " 实时显示颜色的功能，如#FFFFFF
-Plugin 'cakebaker/scss-syntax.vim'
+Plug 'cakebaker/scss-syntax.vim'
 
 " CSS3 高亮，包括stylus,Less,Sass
-Plugin 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax'
 
-call vundle#end()          " 插件列表结束
+call plug#end()            " 插件列表结束
 filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -183,15 +186,15 @@ filetype plugin indent on  " 根据侦测到的不同类型加载对应的插件
 " 
 set background=dark
 " 素雅 solarized
-" Plugin 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 " colorscheme solarized
 
 " 多彩 molokai
-" Plugin 'tomasr/molokai' 
+" Plug 'tomasr/molokai' 
 colorscheme molokai
 
 " 复古 phd
-" Plugin 'tomasr/molokai' 
+" Plug 'tomasr/molokai' 
 " colorscheme phd
 " <<<<<<<<<<
 
@@ -253,14 +256,14 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h16
 " set nowrap " 禁止折行
 
 
-" Plugin 'Lokaltog/vim-powerline'
+" Plug 'Lokaltog/vim-powerline'
 " 设置状态栏主题风格
 " let g:Powerline_colorscheme='solarized256'
 " let g:Powerline_symbols='fancy'
 
 
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 " 设置状态栏主题风格
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -310,7 +313,7 @@ set shiftwidth=4    " 设置格式化时制表符占用空格数
 set softtabstop=4   " 让 vim 把连续数量的空格视为一个制表符
 
 
-" Plugin 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 " 缩进可视化插件 Indent Guides
 " 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=1
@@ -341,7 +344,7 @@ set nofoldenable       " 启动 vim 时关闭折叠代码
 " >>>>>>>>>>
 " 接口与实现快速切换
 
-" Plugin 'derekwyatt/vim-fswitch'
+" Plug 'derekwyatt/vim-fswitch'
 " *.cpp 和 *.h 间切换
 nmap <silent> <Leader>sw :FSHere<cr>
 
@@ -352,7 +355,7 @@ nmap <silent> <Leader>sw :FSHere<cr>
 " >>>>>>>>>>
 " 代码收藏
 
-" Plugin 'kshenoy/vim-signature'
+" Plug 'kshenoy/vim-signature'
 " 书签可视化的插件
 " 自定义 vim-signature 快捷键
 let g:SignatureMap = {
@@ -386,7 +389,7 @@ let g:SignatureMap = {
 " >>>>>>>>>>
 " 标签列表
 
-" Plugin 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 " 基于标签的标识符列表插件
 " 需要安装ctags `brew install ctags`
 " 安装ctags 之后签列表子窗口才能出现
@@ -416,10 +419,10 @@ let g:tagbar_type_css = {
 " 基于标签的代码导航
 
 " 自动生成标签并引入
-" Plugin 'vim-scripts/indexer.tar.gz'
+" Plug 'vim-scripts/indexer.tar.gz'
 " 上面插件，依赖下面两个插件
-" Plugin 'vim-scripts/DfrankUtil'
-" Plugin 'vim-scripts/vimprj'
+" Plug 'vim-scripts/DfrankUtil'
+" Plug 'vim-scripts/vimprj'
 " 设置插件 indexer 调用 ctags 的参数
 " 默认 --c++-kinds=+p+l，重新设置为 --c++-kinds=+l+p+x+c+d+e+f+g+m+n+s+t+u+v
 " 默认 --fields=+iaS 不满足 YCM 要求，需改为 --fields=+iaSl
@@ -445,10 +448,16 @@ nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 " 查找
 
 " 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
-" Plugin 'dyng/ctrlsf.vim'
+" Plug 'dyng/ctrlsf.vim'
 " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。
 " 快捷键速记法：search in project
+let g:ctrlsf_ackprg = 'rg' 
 nnoremap <Leader>sp :CtrlSF<CR>
+" 选中搜索 - 文本中选中关键字
+vmap     <Leader>sp <Plug>CtrlSFVwordPath
+" 选中搜索 - 结果列表
+vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
+vmap     <Leader>sL <Plug>CtrlSFQuickfixVwordExec
 
 " <<<<<<<<<<
 
@@ -457,7 +466,7 @@ nnoremap <Leader>sp :CtrlSF<CR>
 " 内容替换
 
 " 快捷替换插件设置快捷键
-" Plugin 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 let g:multi_cursor_next_key='<S-n>'
 let g:multi_cursor_skip_key='<S-k>'
 
@@ -510,7 +519,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 " >>>>>>>>>>
 " 快速开关注释
-" Plugin 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 
 " 在注释符默认添加空格
 let g:NERDSpaceDelims = 1
@@ -536,7 +545,7 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
-" Plugin 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " YCM 补全菜单配色
 " 菜单
 " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
@@ -578,7 +587,7 @@ let g:ycm_seed_identifiers_with_syntax=1
 " 由接口快速生成实现框架
 
 " 根据类声明自动生成类实现的代码框架
-" Plugin 'derekwyatt/vim-protodef'
+" Plug 'derekwyatt/vim-protodef'
 " 成员函数的实现顺序与声明顺序一致
 let g:disable_protodef_sorting=1
 
@@ -587,7 +596,7 @@ let g:disable_protodef_sorting=1
 
 " >>>>>>>>>>
 " 语法高亮多种知名JS库
-" Plugin 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 
 autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
 autocmd BufReadPre *.js let b:javascript_lib_use_react = 1
@@ -619,7 +628,7 @@ nmap <Leader>man :Man 3 <cword><CR>
 " 工程文件浏览
 
 " 查看工程文件列表
-" Plugin 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 
@@ -661,7 +670,7 @@ let NERDTreeAutoDeleteBuffer=1
 " 多文档编辑
  
 " 显示多个 buffer 对应的 window
-" Plugin 'fholgado/minibufexpl.vim'
+" Plug 'fholgado/minibufexpl.vim'
 " 显示/隐藏 MiniBufExplorer 窗口
 map <Leader>bl :MBEToggle<cr>
 
@@ -713,7 +722,7 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip"]
 
 " >>>>>>>>>>
 " 让你有机会撤销最近一步或多步操作
-" Plugin 'sjl/gundo.vim'
+" Plug 'sjl/gundo.vim'
 " 调用 gundo 树
 nnoremap <Leader>ud :GundoToggle<CR>
 
