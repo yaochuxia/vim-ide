@@ -3,6 +3,8 @@ vim-web
 
 Only tested on Mac OSx
 
+<img align="center" src="./vim-web.gif">
+
 ## 目录
 
 - [安装](#安装)
@@ -138,6 +140,8 @@ ctrl-b # 上一页 b 就是`backward`
 ;;e # 光标后代码定位
 ;;f # 光标后代码定位 <搜索自负> 出现定位信息
 ;;F # 光标前代码定位 <搜索自负> 出现定位信息
+
+;ilt # 设置显示／隐藏标签列表子窗口(函数列表)的快捷键。速记：identifier list by tag
 
 0   # 行首
 $   # 行尾
