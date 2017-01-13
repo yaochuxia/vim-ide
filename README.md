@@ -52,7 +52,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 
 # 上面执行完成之后
 # 开始下载安装插件
-$ vim # 在vim中运行 ":PluginInstall"
+$ vim # 在vim中运行 ":PlugInstall"
 
 # 上面插件安装完成之后执行下面内容
 # command-t 文件搜索插件安装
@@ -91,7 +91,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 将配置信息其加入 `~/.vim/.vimrc` 中的`call vundle#begin()` 和 `call vundle#end()` 之间，最后进入 vim 输入下面命令，摁 `enter` 进行安装。
 
 ```shell
-:PluginInstall
+:PlugInstall
 ```
 
 ### 更新插件
@@ -99,7 +99,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 插件更新频率较高，差不多每隔一个月你应该看看哪些插件有推出新版本，批量更新，只需在 vim 中执行下面命令即可。
 
 ```shell
-:PluginUpdate
+:PlugUpdate
 ```
 
 ### 卸载插件
@@ -107,7 +107,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 先在 .vimrc 中注释或者删除对应插件配置信息，然后在 vim 中执行下面命令，即可删除对应插件。
 
 ```shell
-:PluginClean
+:PlugClean
 ```
 
 ## 启动Vim
