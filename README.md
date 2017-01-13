@@ -64,8 +64,14 @@ $ rake make
 $ brew install ripgrep
 
 # 代码提示插件也需要你运行安装哦，不然没有效果嘞
-cd ~/.vim/plugged/YouCompleteMe
-./install.sh 
+$ cd ~/.vim/plugged/YouCompleteMe
+$ ./install.sh 
+
+# 需要安装ctags 不然配置没效果哦
+# ctags for Mac
+$ brew install ctags
+# ctags for Centos7
+$ yum install ctags
 ```
 
 **注：** 默认已经安装了前端必备插件。`.vimrc` 是控制 vim 行为的配置文件，位于 ~/.vimrc，不论 vim 窗口外观、显示字体，还是操作方式、快捷键、插件属性均可通过编辑该配置文件将 vim 调教成最适合你的编辑器。
