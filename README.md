@@ -1,3 +1,6 @@
+
+<img align="right" src="./vim-web-logo.png">
+
 vim-web
 ===
 
