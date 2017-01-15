@@ -11,6 +11,7 @@ Only tested on Mac OSx
 ## 目录
 
 - [安装](#安装)
+  - [查看配置位置](#查看配置位置)
   - [下载vim-web](#下载vim-web)
   - [下载安装插件](#下载安装插件)
   - [安装依赖](#安装依赖)
@@ -61,6 +62,8 @@ Only tested on Mac OSx
 
 ### 下载vim-web
 
+将插件以及配置下载到 `~/.vim/` 目录中，这个目录是存放所有插件和配置的地方。vimscript是vim自己的一套脚本语言，通过这种脚本语言可以实现与 vim 交互，达到功能扩展的目的。一组 vimscript 就是一个 vim 插件，vim 的很多功能都由各式插件实现。
+
 ```shell
 $ git clone https://github.com/jaywcjlove/vim-web.git ~/.vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
@@ -68,7 +71,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 
 ### 下载安装插件
 
-安装`~/.vimrc` 中配置的插件。
+安装`~/.vimrc` 中配置的插件，这个过程需要很长时间。
 
 ```shell
 # 上面执行完成之后
