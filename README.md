@@ -11,6 +11,9 @@ Only tested on Mac OSx
 ## 目录
 
 - [安装](#安装)
+  - [下载vim-web](#下载vim-web)
+  - [下载安装插件](#下载安装插件)
+  - [安装依赖](#安装依赖)
 - [插件管理](#插件管理)
   - [安装插件](#安装插件)
   - [更新插件](#更新插件)
@@ -61,10 +64,11 @@ Only tested on Mac OSx
 ```shell
 $ git clone https://github.com/jaywcjlove/vim-web.git ~/.vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
-
 ```
 
 ### 下载安装插件
+
+安装`~/.vimrc` 中配置的插件。
 
 ```shell
 # 上面执行完成之后
@@ -74,6 +78,8 @@ $ vim # 在vim中运行 ":PlugInstall"
 ```
 
 ### 安装依赖
+
+部分插件需要安装一些软件，vim的部分插件才起作用。
 
 ```shell
 # 上面插件安装完成之后执行下面内容
