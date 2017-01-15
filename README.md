@@ -49,14 +49,33 @@ Only tested on Mac OSx
 
 最新版本的Vim 7.4+  使用(`brew install macvim`)安装，vim 版本更新 `brew install macvim --override-system-vim`
 
+### 查看配置位置
+
+```shell
+# 进入vim输入下面字符
+:echo $MYVIMRC
+```
+
+### 下载vim-web
+
 ```shell
 $ git clone https://github.com/jaywcjlove/vim-web.git ~/.vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
 
+```
+
+### 下载安装插件
+
+```shell
 # 上面执行完成之后
 # 开始下载安装插件
 $ vim # 在vim中运行 ":PlugInstall"
 
+```
+
+### 安装依赖
+
+```shell
 # 上面插件安装完成之后执行下面内容
 # command-t 文件搜索插件安装
 $ cd ~/.vim/plugged/command-t 
@@ -78,13 +97,6 @@ $ yum install ctags
 ```
 
 **注：** 默认已经安装了前端必备插件。`.vimrc` 是控制 vim 行为的配置文件，位于 ~/.vimrc，不论 vim 窗口外观、显示字体，还是操作方式、快捷键、插件属性均可通过编辑该配置文件将 vim 调教成最适合你的编辑器。
-
-### 查看配置位置
-
-```
-# 进入vim输入下面字符
-:echo $MYVIMRC
-```
 
 ## 插件管理
 
