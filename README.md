@@ -1,7 +1,6 @@
 
 ![vim-web](./vim-web-logo.png)
 
-vim-web
 ===
 
 Only tested on Mac OSx
