@@ -1,5 +1,5 @@
 
-<img align="right" width="89" src="./vim-web-logo.png">
+![vim-web](./vim-web-logo.png)
 
 vim-web
 ===
