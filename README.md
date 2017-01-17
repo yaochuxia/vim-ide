@@ -494,7 +494,7 @@ Ctrl+wk #移动到上方的窗口
 
 搜索有两个插件可以使用 [wincent/command-t](https://github.com/wincent/command-t) 和 [junegunn/fzf](https://github.com/junegunn/fzf)，`fzf`没有下载下来，这里在使用 `command-t` ，使用的时候记得，进入目录 `cd ~/.vim/plugged/command-t` 运行 `rake make`。
 
-```bash
+```shell
 ;t # 启动搜索文件
 ```
 
@@ -502,7 +502,7 @@ Ctrl+wk #移动到上方的窗口
 
 [dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim)，在插件完成安装之后，需要安装另外的工具，才能运行
 
-```bash
+```shell
 brew install ripgrep
 
 # 上面安装好了之后，在.vimrc中配置下面内容
@@ -518,18 +518,29 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 
 基本使用方法
 
-```bash
+```shell
+;sp  # 搜索快捷键
 :CtrlSF pattern dir  # 如果后面不带 dir 则默认是 . 当前目录搜索 
 # 使用 j k h l 浏览CtrlSP窗口  使用 Ctrl + j/k 在匹配项中跳转。
 # 使用 q 则退出 CtrlSP窗口
 # 使用 p 
 ```
 
+基本搜索，这种搜索不需要依赖任何插件，输入 <kbd>/</kbd> 再输入需要搜索的内容，摁 <kbd>Enter</kbd> 键，将会高亮所有搜索的内容，在英文状态下摁 <kbd>n</kbd> 字母键向下查找
+
+```shell
+/搜索内容
+
+# 切换 向上和向下搜索
+# 输入 / 摁 Enter键，再摁 n 字母键向，下查找
+# 输入 ? 摁 Enter键，再摁 n 字母键向，上查找
+```
+
 ### 快速移动
 
 [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 把满足条件的位置用 [;A~Za~z] 间的标签字符标出来，找到你想去的位置再键入对应标签字符即可快速到达。
 
-```bash
+```shell
 ;;b # 光标前代码定位
 ;;e # 光标后代码定位
 ;;f # 光标后代码定位 <搜索自负> 出现定位信息
