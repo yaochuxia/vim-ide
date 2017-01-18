@@ -356,6 +356,9 @@ vim 有强大的内容替换命令，进行内容替换操作时，注意：如�
 - 你也可以指定行范围，如，第三行到第五行：`:3,5s/{pattern}/{string}/[flags]`
 - 如果对打开文件进行替换，你需要先通过 `:bufdo` 命令显式告知 vim 范围，再执行替换；
 - 如果对工程内所有文件进行替换，先 `:args **/.cpp */*.h` 告知 vim 范围，再执行替换；
+- 替换当前行第一个 `vivian/` 为 `sky/`，`#` 作为分隔符 `:s #vivian/#sky/# `
+- `:%s/vivian/sky/g`（等同于 `:g/vivian/s//sky/g`） 替换每一行中所有 vivian 为 sky
+- `:n,$s/vivian/sky/g` 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
 
 `:21,27s/^/#/g` 行首替换`#`替换（增加）掉  
 `:ab mymail asdf@qq.com` 输入`mymail` 摁下空格自动替换成`asdf@qq.com`  
