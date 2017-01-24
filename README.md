@@ -46,6 +46,7 @@ Only tested on Mac OSx
   - [管理项目](#管理项目)
   - [代码书写](#代码书写)
   - [代码阅读](#代码阅读)
+- [错误处理](#错误处理)
 - [参考资料](#参考资料)
 
 ## 安装
@@ -83,7 +84,7 @@ $ vim # 在vim中运行 ":PlugInstall"
 
 部分插件需要安装一些软件，vim的部分插件才起作用。
 
-```shell
+```bash
 # 上面插件安装完成之后执行下面内容
 # command-t 文件搜索插件安装
 $ cd ~/.vim/plugged/command-t 
@@ -95,7 +96,9 @@ $ brew install ripgrep
 
 # 代码提示插件也需要你运行安装哦，不然没有效果嘞
 $ cd ~/.vim/plugged/YouCompleteMe
-$ ./install.sh 
+$ ./install.py
+# or  
+$ ./install.sh
 
 # 需要安装ctags 不然配置没效果哦
 # ctags for Mac
@@ -105,6 +108,12 @@ $ yum install ctags
 ```
 
 **注：** 默认已经安装了前端必备插件。`.vimrc` 是控制 vim 行为的配置文件，位于 ~/.vimrc，不论 vim 窗口外观、显示字体，还是操作方式、快捷键、插件属性均可通过编辑该配置文件将 vim 调教成最适合你的编辑器。
+
+**界面字体设置**
+
+`vim-powerline`状态栏主题，界面箭头需要安装[Powerline字体](https://github.com/powerline/fonts) （在我Mac上安装的是Sauce Code Powerline字体），下载安装完成之后，还需要你在命令行工具中设置该字体。
+
+在iTerm2中设置方法：`Command+,` 进入偏好设置（Preferences）=> Profiles => Default(自己的主题配置) => Non-ASCII Font => Change Font(选择字体)
 
 ## 插件管理
 
@@ -636,6 +645,17 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 - [JavaScriptLibrariesSyntax](https://github.com/othree/javascript-libraries-syntax.vim) 语法高亮的知名的JS库
 - [ultisnips](https://github.com/SirVer/ultisnips) 模板补全插件
 - [vim-protodef](https://github.com/derekwyatt/vim-protodef) 根据类声明自动生成类实现的代码框架
+
+## 错误处理
+
+```
+YouCompleteMe unavailable: dlopen(/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found:
+__PyCodecInfo_GetIncrementalDecoder
+  Referenced from: /usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/_io.so
+  Expected in: flat namespace
+ in /usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/_io.so
+Press ENTER or type command to continue
+```
 
 ## 参考资料
 
