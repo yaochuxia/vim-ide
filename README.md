@@ -25,6 +25,7 @@ Only tested on Mac OSx
   - [插入命令](#插入命令)
   - [定位命令](#定位命令)
   - [复制剪切](#复制剪切)
+  - [多光标编辑](#多光标编辑)
   - [简单排版](#简单排版)
   - [保存退出](#保存退出)
   - [整页翻页](#整页翻页)
@@ -205,6 +206,14 @@ u # 选中 - 变小写
 ;cA # 在行尾部添加注释符"//"
 ;cu # 取消代码注释
 
+;sp # 选中搜索 - 文本中选中关键字
+    # normal模式下 选中搜索 - 文本中选中关键字
+;sl # 选中搜索 - 结果列表
+
+# 多光标编辑
+Shift+n # 选中下一个相同字符
+Shift+k # 跳过当前选中的字符
+
 za # 单个代码折叠
 zM # 折叠左右代码
 zR # 所有代码折叠取消
@@ -223,7 +232,8 @@ zR # 所有代码折叠取消
 - `inoremap` (Insert Mode)就只在插入(insert)模式下生效
 - `vnoremap` (Visual Mode)只在visual模式下生效
 - `nnoremap` (Normal Mode)就在normal模式下(狂按esc后的模式)生效
-- 快捷键`<c-y>,` 标示(<kbd>Ctrl</kbd><kbd>y</kbd><kbd>,</kbd>)
+- 快捷键`<c-y>,` 表示(<kbd>Ctrl</kbd><kbd>y</kbd><kbd>,</kbd>)
+- 快捷键`<S-n>` 表示(<kbd>Shift</kbd><kbd>n</kbd>)
 
 ### 快捷键通配符
 
@@ -301,6 +311,15 @@ ndd   # → 剪切当前行以下n 行
 p、P  # → 粘贴在当前光标所在行或行上  
 2dd   # → 删除2行  
 3p    # → 粘贴文本3次  
+```
+
+### 多光标编辑
+
+借助 [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) 实现多光标编辑功能。首先选中一个单词，然后使用快捷键`Shift+n`，就会选中下一个一模一样的字符，`Shift+k`跳过选中，然后你可以进行编辑了。默认这个插件快捷键是`Ctrl+n`，可能会冲突，单在我这里没有冲突，操作`Shift+n`快捷键更舒服，你可以配置自己的快捷键
+
+```
+let g:multi_cursor_next_key='<S-n>'
+let g:multi_cursor_skip_key='<S-k>'
 ```
 
 ### 简单排版

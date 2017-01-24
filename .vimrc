@@ -467,8 +467,9 @@ vmap     <Leader>sL <Plug>CtrlSFQuickfixVwordExec
 
 " 快捷替换插件设置快捷键
 " Plug 'terryma/vim-multiple-cursors'
-let g:multi_cursor_next_key='<S-n>'
-let g:multi_cursor_skip_key='<S-k>'
+
+let g:multi_cursor_next_key='<S-n>'  " 选中下一个字符
+let g:multi_cursor_skip_key='<S-k>'  " 选中跳过当前字符
 
 " 精准替换
 " 替换函数。参数说明：
@@ -550,7 +551,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " 菜单
 " highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
 " 选中项
-highlight PmenuSel term=bold ctermbg=24 guibg=#13354A
+" highlight PmenuSel term=bold ctermbg=darkred guibg=#13354A
 
 
 " 补全功能在注释中同样有效
