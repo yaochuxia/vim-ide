@@ -168,6 +168,9 @@ Plug 'Lokaltog/vim-easymotion'
 " 语法高亮多种知名JS库
 Plug 'othree/javascript-libraries-syntax.vim'
 
+" React jsx 语法高亮
+" Plug 'mxw/vim-jsx'
+
 " 提供快速编写xml/html的能力，如标签自动闭合等
 Plug 'othree/xml.vim'
 
@@ -599,12 +602,14 @@ let g:disable_protodef_sorting=1
 " 语法高亮多种知名JS库
 " Plug 'othree/javascript-libraries-syntax.vim'
 
-autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
-autocmd BufReadPre *.js let b:javascript_lib_use_react = 1
-autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
-autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 0
-autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
-autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
+let g:used_javascript_libs = 'jquery,react,vue'
+
+" autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_react = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 0
+" autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+" autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
 
 " <<<<<<<<<<
 

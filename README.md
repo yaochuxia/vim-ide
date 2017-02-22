@@ -42,7 +42,7 @@ Only tested on Mac OSx
   - [文件搜索](#文件搜索)
   - [搜索文本内容](#搜索文本内容)
   - [快速移动](#快速移动)
-- [插件说明](#插件说明)
+- [插件列表](#插件列表)
   - [主题风格](#主题风格)
   - [使用界面](#使用界面)
   - [管理项目](#管理项目)
@@ -586,7 +586,7 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 ;;F # 光标前代码定位 <搜索自负> 出现定位信息
 ```
 
-## 插件说明
+## 插件列表
 
 这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。
 
@@ -661,6 +661,7 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 - 语法高亮
   - [vim-polyglot](https://github.com/sheerun/vim-polyglot) 支持常见的语法高亮
   - [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
+  - [vim-jsx](https://github.com/mxw/vim-jsx) JSX语法高亮
   - [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
   - [vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax) CSS3 高亮，包括stylus,Less,Sass
   - [vim-css-color](https://github.com/skammer/vim-css-color) css高亮颜色
