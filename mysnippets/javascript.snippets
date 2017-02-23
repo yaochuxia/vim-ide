@@ -1,0 +1,748 @@
+# ES2015 Javascript 语法
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+snippet "c(onst)?" "const" br
+const ${1} = ${2:'$1'};
+endsnippet
+
+snippet "l(et)?" "let" br
+let ${1} = ${2:'$1'};
+endsnippet
+
+snippet "i(mport|mp|m)?" "import" br
+import ${1} from '${2:./}${3:$1}';
+endsnippet
+
+snippet "e(xport|xp|x)?" "export" br
+export ${1:default };
+endsnippet
+
+snippet ie "Import file then export" b
+import ${1} from '${2:./}${3:$1}';
+
+export ${4:default} $1;
+endsnippet
+
+snippet r "return"
+return ${0:result;}
+endsnippet
+
+snippet : "Object Value JS"
+${1:key}: ${0:value},
+endsnippet
+
+snippet :f "method: func(...) { ... }"
+${1:key}: ${2:(args)} => {
+  return $4;
+}${3:,}
+endsnippet
+
+snippet "\.(map|filter|forEach|reduce)" "Array method with an arrow function" r
+.`!p snip.rv = match.group(1)`(${1:(c, i)} => {
+  return $2;
+});
+endsnippet
+
+snippet "\.(map|filter|forEach|reduce)=" "Array method with an arrow function inline" rA
+.`!p snip.rv = match.group(1)`(${1:(c, i)} => $2);
+endsnippet
+
+snippet => "Arrow function"
+(${1:args}) => {
+  return $3;
+}${2:;}
+endsnippet
+
+snippet =>> "Inline arrow function" A
+(${1:args}) => ($2);
+endsnippet
+
+snippet c=> "Const Function" bA
+const ${1:name} = (${2:args}) => {
+  return $4;
+}${3:;}
+endsnippet
+
+snippet expf "Export function" b
+export ${1:default }function($2) {
+  $3
+};
+endsnippet
+
+snippet fun* "Generator"
+function* ${1:name}($2) {
+  yield $3;
+}
+endsnippet
+
+snippet forof "For of loop" b
+for (let ${1:value} of ${2:iterable}) {
+  ${3:$1}
+}
+endsnippet
+
+snippet class "Class"
+class ${1:Name} {
+  constructor(${2:arg}) {
+    $3
+  }
+  $4
+}
+endsnippet
+
+snippet cl=> "console.log(...)" b
+console.log('${2:$1: }', ${1});
+endsnippet
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+# React & JSX
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+snippet rcd "React Redux Class Component root" b
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />,
+  document.getElementById('app')
+)
+endsnippet
+
+# React Component
+# =======================
+snippet rcc "React Class Component" b
+import React, { Component, PropTypes } from 'react';
+import styles from './${2:$1}.css';
+
+class ${1:`!v expand('%:t:r')`} extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+  };
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className={styles.base}>
+        $3
+      </div>
+    );
+  }
+}
+
+export default $1;
+endsnippet
+
+# React Functional Component
+# =======================
+snippet rfc "React Functional Component" b
+import React, { PropTypes } from 'react';
+import styles from './${2:$1}.css';
+
+const ${1:`!v expand('%:t:r')`} = ({ ${3:...props} }) => (
+  <div className={styles.base}>
+    $4
+  </div>
+);
+
+$1.defaultProps = {
+};
+
+$1.propTypes = {
+};
+
+export default $1;
+endsnippet
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+# React Native Component
+# >>>>>>>>>>>>>>>>>>>>>>>>>
+snippet rnc "React Native Component" b
+import React,{Component} from 'react';
+import {
+  StyleSheet,
+  View
+} from 'react-native';
+
+export default class ${1:`!v expand('%:t:r')`} extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+      <View>
+        $2
+      </View>
+    )
+  }
+}
+
+var styles = StyleSheet.create({
+  $3
+})
+endsnippet
+
+
+
+snippet rncss "React Native style sheet." i
+var $1 = StyleSheet.create({
+  $2
+})
+endsnippet
+
+snippet dp "Default Props" b
+${1:`!v expand('%:t:r')`.}defaultProps = {
+  $2
+};
+endsnippet
+
+snippet set "Set State"
+this.setState({
+  ${1}: ${2}
+});
+endsnippet
+
+snippet props "Get Property" i
+this.props.${1}
+endsnippet
+
+snippet state "Get State" i
+this.state.${1}
+endsnippet
+
+snippet ref "Ref" i
+ref={${1:ref} => { this.${2:name} = $1; }}
+endsnippet
+
+
+# Component Lifecycle
+snippet cwm "Component Will Mount" b
+componentWillMount() {
+  $1
+}
+endsnippet
+
+snippet cdm "Component Did Mount" b
+componentDidMount() {
+  $1
+}
+endsnippet
+
+snippet cwrp "Component Will Receive Props" b
+componentWillReceiveProps(nextProps) {
+  $1
+}
+endsnippet
+
+snippet scup "Should Component Update" b
+shouldComponentUpdate(nextProps, nextState) {
+  $1
+}
+endsnippet
+
+snippet cwup "Component Will Update" b
+componentWillUpdate(nextProps, nextState) {
+  $1
+}
+endsnippet
+
+snippet cdup "Component Did Update" b
+componentDidUpdate(prevProps, prevState) {
+  $1
+}
+endsnippet
+
+snippet cwu "Component Will Unmount" b
+componentWillUnmount() {
+  $1
+}
+endsnippet
+
+snippet ren "Render"
+render() {
+  return ${1:(
+    ${2:<div>${3}</div>}
+  );}
+}
+endsnippet
+
+
+# PropTypes
+snippet pt "PropTypes Definition" b
+${1:`!v expand('%:t:r')`.}propTypes = {
+  ${2:className}: ${3:PropTypes.string},
+};
+endsnippet
+
+snippet  pt.a "PropTypes Array" w
+PropTypes.array${1:,}
+endsnippet
+
+snippet   pt.b "PropTypes Boolean" w
+PropTypes.bool${1:,}
+endsnippet
+
+snippet pt.f "PropTypes Function" w
+PropTypes.func${1:,}
+endsnippet
+
+snippet pt.n "PropTypes Number" w
+PropTypes.number${1:,}
+endsnippet
+
+snippet pt.o "PropTypes Object" w
+PropTypes.object${1:,}
+endsnippet
+
+snippet pt.s "PropType String" w
+PropTypes.string${1:,}
+endsnippet
+
+snippet pt.no "PropTypes Node" w
+PropTypes.node${1:,}
+endsnippet
+
+snippet pt.e "PropTypes Element" w
+PropTypes.element${1:,}
+endsnippet
+
+snippet pt.io "PropTypes instanceOf" w
+PropTypes.instanceOf(${2:PropTypes.string})${1:,}
+endsnippet
+
+snippet pt.one "PropTypes oneOf" w
+PropTypes.oneOf(['$2'$3])${1:,}
+endsnippet
+
+snippet pt.onet "PropTypes oneOfType" w
+PropTypes.oneOfType([
+  $2
+])${1:,}
+endsnippet
+
+snippet pt.ao "PropTypes arrayOf" w
+PropTypes.arrayOf(${2:PropTypes.string})${1:,}
+endsnippet
+
+snippet pt.oo "PropTypes objectOf" w
+PropTypes.objectOf(${2:PropTypes.string})${1:,}
+endsnippet
+
+snippet pt.sh "PropTyes Shape" w
+PropTypes.shape({
+  $2
+})${1:,}
+endsnippet
+
+snippet ir "isRequired" w
+isRequired,
+endsnippet
+
+
+# React Native  控件
+#-------------
+snippet Text "React Native <Text></Text>" b
+<Text>$1</Text>
+endsnippet
+snippet View "React Native <View></View>" b
+<View>$1</View>
+endsnippet
+snippet Image "React Native <Image />" b
+<Image source={require('$1')} />
+endsnippet
+snippet Button "React Native <Button />" b
+<Button onPress={$2} title="$1" color="$3" accessibilityLabel="$4"/> 
+endsnippet
+
+# React Native  样式
+#-------------
+snippet width "React Native width" w
+width
+endsnippet
+snippet height "React Native height" w
+height
+endsnippet
+snippet top "React Native top" w
+top
+endsnippet
+snippet left "React Native left" w
+left
+endsnippet
+snippet right "React Native right" w
+right
+endsnippet
+snippet bottom "React Native bottom" w
+bottom
+endsnippet
+snippet minWidth "React Native minWidth" w
+minWidth
+endsnippet
+snippet maxWidth "React Native maxWidth" w
+maxWidth
+endsnippet
+snippet minHeight "React Native minHeight" w
+minHeight
+endsnippet
+snippet maxHeight "React Native maxHeight" w
+maxHeight
+endsnippet
+snippet margin "React Native margin" w
+margin
+endsnippet
+snippet marginVertical "React Native marginVertical" w
+marginVertical
+endsnippet
+snippet marginHorizontal "React Native marginHorizontal" w
+marginHorizontal
+endsnippet
+snippet marginTop "React Native marginTop" w
+marginTop
+endsnippet
+snippet marginBottom "React Native marginBottom" w
+marginBottom
+endsnippet
+snippet marginLeft "React Native marginLeft" w
+marginLeft
+endsnippet
+snippet marginRight "React Native marginRight" w
+marginRight
+endsnippet
+snippet padding "React Native padding" w
+padding
+endsnippet
+snippet paddingVertical "React Native paddingVertical" w
+paddingVertical
+endsnippet
+snippet paddingHorizontal "React Native paddingHorizontal" w
+paddingHorizontal
+endsnippet
+snippet paddingTop "React Native paddingTop" w
+paddingTop
+endsnippet
+snippet paddingBottom "React Native paddingBottom" w
+paddingBottom
+endsnippet
+snippet paddingLeft "React Native paddingLeft" w
+paddingLeft
+endsnippet
+snippet paddingRight "React Native paddingRight" w
+paddingRight
+endsnippet
+snippet borderWidth "React Native borderWidth" w
+borderWidth
+endsnippet
+snippet borderTopWidth "React Native borderTopWidth" w
+borderTopWidth
+endsnippet
+snippet borderRightWidth "React Native borderRightWidth" w
+borderRightWidth
+endsnippet
+snippet borderBottomWidth "React Native borderBottomWidth" w
+borderBottomWidth
+endsnippet
+snippet borderLeftWidth "React Native borderLeftWidth" w
+borderLeftWidth
+endsnippet
+snippet position "React Native position" w
+position
+endsnippet
+snippet flexDirection "React Native flexDirection" w
+flexDirection
+endsnippet
+snippet flexWrap "React Native flexWrap" w
+flexWrap
+endsnippet
+snippet justifyContent "React Native justifyContent" w
+justifyContent
+endsnippet
+snippet alignItems "React Native alignItems" w
+alignItems
+endsnippet
+snippet alignSelf "React Native alignSelf" w
+alignSelf
+endsnippet
+snippet overflow "React Native overflow" w
+overflow
+endsnippet
+snippet flex "React Native flex" w
+flex
+endsnippet
+snippet flexGrow "React Native flexGrow" w
+flexGrow
+endsnippet
+snippet flexShrink "React Native flexShrink" w
+flexShrink
+endsnippet
+snippet flexBasis "React Native flexBasis" w
+flexBasis
+endsnippet
+snippet aspectRatio "React Native aspectRatio" w
+aspectRatio
+endsnippet
+snippet zIndex "React Native zIndex" w
+zIndex
+endsnippet
+snippet shadowColor "React Native shadowColor" w
+shadowColor
+endsnippet
+snippet shadowOffset "React Native shadowOffset" w
+shadowOffset
+endsnippet
+snippet shadowOpacity "React Native shadowOpacity" w
+shadowOpacity
+endsnippet
+snippet shadowRadius "React Native shadowRadius" w
+shadowRadius
+endsnippet
+snippet transform "React Native transform" w
+transform
+endsnippet
+snippet transformMatrix "React Native transformMatrix" w
+transformMatrix
+endsnippet
+snippet decomposedMatrix "React Native decomposedMatrix" w
+decomposedMatrix
+endsnippet
+snippet scaleX "React Native scaleX" w
+scaleX
+endsnippet
+snippet scaleY "React Native scaleY" w
+scaleY
+endsnippet
+snippet rotation "React Native rotation" w
+rotation
+endsnippet
+snippet translateX "React Native translateX" w
+translateX
+endsnippet
+snippet translateY "React Native translateY" w
+translateY
+endsnippet
+snippet backfaceVisibility "React Native backfaceVisibility" w
+backfaceVisibility
+endsnippet
+snippet backgroundColor "React Native backgroundColor" w
+backgroundColor
+endsnippet
+snippet borderColor "React Native borderColor" w
+borderColor
+endsnippet
+snippet borderTopColor "React Native borderTopColor" w
+borderTopColor
+endsnippet
+snippet borderRightColor "React Native borderRightColor" w
+borderRightColor
+endsnippet
+snippet borderBottomColor "React Native borderBottomColor" w
+borderBottomColor
+endsnippet
+snippet borderLeftColor "React Native borderLeftColor" w
+borderLeftColor
+endsnippet
+snippet borderRadius "React Native borderRadius" w
+borderRadius
+endsnippet
+snippet borderTopLeftRadius "React Native borderTopLeftRadius" w
+borderTopLeftRadius
+endsnippet
+snippet borderTopRightRadius "React Native borderTopRightRadius" w
+borderTopRightRadius
+endsnippet
+snippet borderBottomLeftRadius "React Native borderBottomLeftRadius" w
+borderBottomLeftRadius
+endsnippet
+snippet borderBottomRightRadius "React Native borderBottomRightRadius" w
+borderBottomRightRadius
+endsnippet
+snippet borderStyle "React Native borderStyle" w
+borderStyle
+endsnippet
+snippet opacity "React Native opacity" w
+opacity
+endsnippet
+snippet elevation "React Native elevation" w
+elevation
+endsnippet
+snippet color "React Native color" w
+color
+endsnippet
+snippet fontFamily "React Native fontFamily" w
+fontFamily
+endsnippet
+snippet fontSize "React Native fontSize" w
+fontSize
+endsnippet
+snippet fontStyle "React Native fontStyle" w
+fontStyle
+endsnippet
+snippet fontWeight "React Native fontWeight" w
+fontWeight
+endsnippet
+snippet fontVariant "React Native fontVariant" w
+fontVariant
+endsnippet
+snippet textShadowOffset "React Native textShadowOffset" w
+textShadowOffset
+endsnippet
+snippet textShadowRadius "React Native textShadowRadius" w
+textShadowRadius
+endsnippet
+snippet textShadowColor "React Native textShadowColor" w
+textShadowColor
+endsnippet
+snippet letterSpacing "React Native letterSpacing" w
+letterSpacing
+endsnippet
+snippet lineHeight "React Native lineHeight" w
+lineHeight
+endsnippet
+snippet textAlign "React Native textAlign" w
+textAlign
+endsnippet
+snippet textAlignVertical "React Native textAlignVertical" w
+textAlignVertical
+endsnippet
+snippet includeFontPadding "React Native includeFontPadding" w
+includeFontPadding
+endsnippet
+snippet textDecorationLine "React Native textDecorationLine" w
+textDecorationLine
+endsnippet
+snippet textDecorationStyle "React Native textDecorationStyle" w
+textDecorationStyle
+endsnippet
+snippet textDecorationColor "React Native textDecorationColor" w
+textDecorationColor
+endsnippet
+snippet writingDirection "React Native writingDirection" w
+writingDirection
+endsnippet
+#<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+# JS
+# =======================
+snippet fuc "JS function"
+function $1($2){
+  $3
+}
+endsnippet
+
+
+snippet if "JS if"
+if($1){
+  $2
+}
+endsnippet
+
+snippet ife "JS if else"
+if($1){
+  $2
+}else{
+  $3
+}
+endsnippet
+
+snippet for "JS for"
+for(var i=0;i<$1.length;i++){
+  //do something
+  $2
+}
+endsnippet
+
+snippet forin "JS for in"
+for(var $1 in $2){
+  //do something
+  $3
+}
+endsnippet
+
+snippet ifeif "JS if elseif"
+if($1){
+  $3
+}else if($2){
+  $4
+}
+endsnippet
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+# Node  - Start
+# >>>>>>>>>>>>>>>>>>
+
+snippet #! "shebang"
+#!/usr/bin/env node
+endsnippet
+
+snippet vreq "assign a CommonJS-style module to a var"
+var ${0:${1/(.+\/)*(\w+)(-|\b|$)(\..+$)?/\u$2/g}} = require('$1');
+endsnippet
+
+snippet ex "module.exports"
+module.exports = $1;
+endsnippet
+
+snippet hcs "http.createServer"
+http.createServer($1).listen($2);
+endsnippet
+
+snippet ncs "net.createServer"
+net.createServer(function(${1:socket}){
+  $1.on('data', function(${3:data}){
+    $4
+  });
+  $1.on('end', function(){
+    $5
+  });
+}).listen(${6:8124});
+endsnippet
+
+snippet pipe "pipe"
+pipe(${1:stream})$2
+endsnippet
+
+# Express snippets
+# ----------------
+
+snippet eget "express GET"
+${1:app}.get('$2', $3);
+endsnippet
+
+snippet epost "express POST"
+${1:app}.post('$2', $3);
+endsnippet
+
+snippet eput "express PUT"
+${1:app}.put('$2', $3);
+endsnippet
+
+snippet edelete "express DELETE"
+${1:app}.delete('$2', $3);
+endsnippet
+
+# process snippets
+
+snippet stdout "stdout"
+process.stdout
+endsnippet
+
+snippet stdin "stdin"
+process.stdin
+endsnippet
+
+snippet require "require"
+require
+endsnippet
+
+snippet stderr "stderr"
+process.stderr
+endsnippet
+
+# Node  - End
+# <<<<<<<<<<<<<<<<<<<<<<<

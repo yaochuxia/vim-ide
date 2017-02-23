@@ -233,10 +233,16 @@ map <silent> <F11> :call ToggleFullscreen()<CR>
 
 " >>>>>>>>>>
 " 辅助信息
+ 
+set laststatus=2   " 总是显示状态栏
+set ruler          " 显示光标当前位置
+set relativenumber " 开启行号显示
+set number         " 开启行号显示
+                   " 显示绝对行号      set number
+                   " 取消显示绝对行号   set nonumber
+                   " 显示相对行号       set relativenumber
+                   " 取消显示相对行号   set norelativenumber
 
-set laststatus=2  " 总是显示状态栏
-set ruler         " 显示光标当前位置
-set number        " 开启行号显示
 set cursorline    " 高亮显示当前 - 行
 set cursorcolumn  " 高亮显示当前 - 列
 set hlsearch      " 高亮显示搜索结果

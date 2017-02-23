@@ -38,6 +38,7 @@ Only tested on Mac OSx
   - [工程文件菜单](#工程文件菜单)
   - [Tab操作](#tab操作)
   - [HTML操作](#HTML操作)
+  - [代码片段补全](#代码片段补全)
 - [搜索查找](#搜索查找)
   - [文件搜索](#文件搜索)
   - [搜索文本内容](#搜索文本内容)
@@ -99,8 +100,8 @@ $ brew install ripgrep
 # 代码提示插件也需要你运行安装哦，不然没有效果嘞
 $ cd ~/.vim/plugged/YouCompleteMe
 $ ./install.py
-# or  
-$ ./install.sh
+# or 新版脚本过时了，推荐上面脚本
+$ ./install.sh 
 
 # 需要安装ctags 不然配置没效果哦
 # ctags for Mac
@@ -529,6 +530,27 @@ Ctrl+wk #移动到上方的窗口
 <ctrl-y>/ # 切换注释  
 <ctrl-y>a # 从 URL 地址生成锚  
 <ctrl-y>A # 从 URL 地址生成引用文本  
+```
+
+#### 代码片段补全
+
+让vim 自动完成相同的代码片断，比如 if-else、switch。[UltiSnips](https://github.com/SirVer/ultisnips) 这个插件可以帮助我们完成这项艰巨的工作。UltiSnips 有一套自己的代码模板语法规则，如下：
+
+```
+snippet if "if statement" i
+if (${1:/* condition */}) { 
+    ${2:TODO} 
+} 
+endsnippet
+```
+
+新版 UltiSnips 并未自带预定义的代码模板，你可以从 [honza/vim-snippets](https://github.com/honza/vim-snippets) 获取各类语言丰富的代码模板，这种模版我将它存放到 `~/.vim/mysnippets/` 目录里面，然后在配置中指定名字，同时修改出发快捷键，因为默认的快捷键与YCM插件冲突，需要在配置中更改。如下：
+
+```vim
+let g:UltiSnipsSnippetDirectories=["mysnippets"] " 配置目录
+let g:UltiSnipsExpandTrigger="<leader><tab>"     " 配置快捷键
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"    " 配向前跳转快捷键
+let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>" " 配向后跳转快捷键
 ```
 
 ## 搜索查找
