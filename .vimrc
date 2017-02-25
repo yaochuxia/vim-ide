@@ -18,13 +18,13 @@ nmap LB 0     " 定义快捷键到行首 / “)” 页尾
 nmap LE $     " 定义快捷键到行尾
 
 vnoremap <Leader>y "+y        " 设置快捷键将选中文本块复制至系统剪贴板
-nmap <Leader>p "+p            " 设置快捷键将系统剪贴板内容粘贴至vim
+nnoremap <Leader>p "+p            " 设置快捷键将系统剪贴板内容粘贴至vim
 
-nmap <Leader>q :q<CR>         " 定义快捷键关闭当前分割窗口
+nnoremap <Leader>q :q<CR>         " 定义快捷键关闭当前分割窗口
 " nmap <Leader>w :w<CR>         " 定义快捷键保存当前窗口内容（与插件冲突，注释了）
 nnoremap <Leader>w :w<CR> 
-nmap <Leader>WQ :wa<CR>:q<CR> " 定义快捷键保存所有窗口内容并退出 vim
-nmap <Leader>Q :qa!<CR>       " 不做任何保存，直接退出 vim
+nnoremap <Leader>WQ :wa<CR>:q<CR> " 定义快捷键保存所有窗口内容并退出 vim
+nnoremap <Leader>Q :qa!<CR>       " 不做任何保存，直接退出 vim
 
 " 设置快捷键遍历子窗口
 nnoremap nw <C-W><C-W>        " 依次遍历
