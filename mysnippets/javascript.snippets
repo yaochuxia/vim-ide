@@ -186,7 +186,17 @@ var styles = StyleSheet.create({
 })
 endsnippet
 
-
+snippet rncc "React Native Component" b
+class ${1:`!v expand('%:t:r')`} extends Component {
+  render(){
+    return(
+      <View>
+        $2
+      </View>
+    )
+  }
+}
+endsnippet
 
 snippet rncss "React Native style sheet." i
 var $1 = StyleSheet.create({
