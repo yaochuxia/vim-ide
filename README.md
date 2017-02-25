@@ -43,7 +43,7 @@ Only tested on Mac OSx
   - [开关注释](#开关注释)
   - [工程文件菜单](#工程文件菜单)
   - [Tab操作](#tab操作)
-  - [HTML操作](#HTML操作)
+  - [HTML操作](#html操作)
   - [代码片段补全](#代码片段补全)
 - [搜索查找](#搜索查找)
   - [文件搜索](#文件搜索)
@@ -267,8 +267,15 @@ gt # 后一个Tab标签
 gT # 前一个Tab标签
 ;q # 关闭一个标签
 
-ctrl-f # 下一页 f 就是`forword` 
-ctrl-b # 上一页 b 就是`backward`  
+ctrl + y 向上一行
+ctrl + e 向下一行
+ctrl + u 向上半屏
+ctrl + d 向下半屏
+ctrl + f # 下一页 f 就是`forword` 
+ctrl + b # 上一页 b 就是`backward`  
+
+ctrl + o 
+ctrl + i 
 
 ;t # 通过搜索文件打开文件
 
@@ -662,7 +669,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>" " 配向后跳转快捷键
 ```shell
 brew install ripgrep
 
-# 上面安装好了之后，在.vimrc中配置下面内容
+# 上面ripgrep安装好了之后，在.vimrc中配置下面内容
 # 快捷键速记法：search in project
 let g:ctrlsf_ackprg = 'rg' 
 # 设置快捷键
