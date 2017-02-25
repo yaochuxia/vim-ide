@@ -165,7 +165,7 @@ $ vim
 
 ## Vim理解
 
-这部分来源 [一起来说 Vim 语](http://www.jianshu.com/p/a361ce8c97bc)
+这部分来源 [一起来说 Vim 语](http://www.jianshu.com/p/a361ce8c97bc)，理解此部分是需要你已经了解了 Vim 的几种常用的工作模式（正常模式、插入模式、命令模式等）
 
 ### 动词
 
@@ -267,10 +267,10 @@ gt # 后一个Tab标签
 gT # 前一个Tab标签
 ;q # 关闭一个标签
 
-ctrl + y 向上一行
-ctrl + e 向下一行
-ctrl + u 向上半屏
-ctrl + d 向下半屏
+ctrl + y # 向上一行
+ctrl + e # 向下一行
+ctrl + u # 向上半屏
+ctrl + d # 向下半屏
 ctrl + f # 下一页 f 就是`forword` 
 ctrl + b # 上一页 b 就是`backward`  
 
@@ -820,3 +820,4 @@ Press ENTER or type command to continue
 
 - [luofei614/vim-plug](https://github.com/luofei614/vim-plug/blob/master/.vimrc)
 - [yangyangwithgnu/use_vim_as_ide](https://github.com/yangyangwithgnu/use_vim_as_ide/blob/master/.vimrc)
+- [fingertap/vimrc](https://github.com/fingertap/vimrc/blob/master/.vimrc)
