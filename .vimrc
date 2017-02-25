@@ -151,7 +151,8 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'mattn/emmet-vim'
 
 " 快捷键选中 `<>`、`[]`、`{}` 中间的内容
-Plug 'gcmt/wildfire.vim'
+" 这个与自定义快捷键冲突
+" Plug 'gcmt/wildfire.vim'
 
 " 让你有机会撤销最近一步或多步操作
 Plug 'sjl/gundo.vim'
