@@ -54,7 +54,6 @@ set wildmenu        " vim 自身命令行模式智能补全
 " <<<=========================================
 
 
-
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>插件安装>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 " plug 环境设置
@@ -107,6 +106,9 @@ Plug 'kshenoy/vim-signature'
 
 " 显示git diff 和 stages/undoes 片段
 Plug 'airblade/vim-gitgutter'
+
+" 解决中文输入法下面无法使用命令
+Plug 'ybian/smartim'
 
 " 它可以让书签行高亮
 Plug 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'

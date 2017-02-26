@@ -755,6 +755,7 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 - [ctrlsf.vim](https://github.com/dyng/ctrlsf.vim) 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
 - [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) 多光标编辑功能
 - [gen_tags.vim](https://github.com/jsfaint/gen_tags.vim) 生成，加载，更新ctags/gtags文件。
+- [ybian/smartim](https://github.com/ybian/smartim) 解决中文输入法下面无法使用命令
 
 #### 代码书写
 
