@@ -41,7 +41,6 @@ Only tested on Mac OSx
   - [Tab操作](#tab操作)
   - [HTML操作](#html操作)
   - [代码片段补全](#代码片段补全)
-- [文件恢复](#文件恢复)
 - [搜索查找替换](#搜索查找替换)
   + [搜索](#替换)
     + [文件搜索](#文件搜索)
@@ -51,6 +50,8 @@ Only tested on Mac OSx
     + [替换取消](#替换取消)
     + [快捷替换](#快捷替换)
     + [精确替换](#精确替换)
+- [文件恢复](#文件恢复)
+- [多文档编辑](#多文档编辑)
 - [插件列表](#插件列表)
   - [主题风格](#主题风格)
   - [使用界面](#使用界面)
@@ -476,6 +477,8 @@ ctrl-b # 上一页 b 就是`backward`
 
 ### 工程文件菜单
 
+[scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+
 自定义快捷键
 
 ```shell
@@ -503,7 +506,7 @@ go      # 在已有窗口 中打开文件、目录或书签，但不跳到该窗
 !       # 执行当前文件
 O       # 递归打开选中 结点下的所有目录
 x       # 合拢选中结点的父目录
-X       # 递归 合拢选中结点下的所有目录
+X       # 递归 合拢选中结点下的所有目录，收起当前目录树
 e       # Edit the current dif
 
 双击    相当于 NERDTree-o
@@ -521,8 +524,8 @@ j       # 跳到当前目录下同级的后一个结点
 C       # 将选中目录或选中文件的父目录设为根结点
 u       # 将当前根结点的父目录设为根目录，并变成合拢原根结点
 U       # 将当前根结点的父目录设为根目录，但保持展开原根结点
-r       # 递归刷新选中目录
-R       # 递归刷新根结点
+r       # 递归刷新选中目录，刷新当前目录
+R       # 递归刷新根结点，刷新根目录树
 m       # 显示文件系统菜单
 cd      # 将 CWD 设为选中目录
 
@@ -616,15 +619,6 @@ let g:UltiSnipsSnippetDirectories=["mysnippets"] " 配置目录
 let g:UltiSnipsExpandTrigger="<leader><tab>"     " 配置快捷键
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"    " 配向前跳转快捷键
 let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>" " 配向后跳转快捷键
-```
-
-## 文件恢复
-
-非正常关闭vi编辑器时会生成一个`.swp`文件，这个文件是为了避免同一个文件产生两个不同的版本。同时可以用作意外退出恢复历史记录。
-
-```
-vi -r {your file name}
-rm .{your file name}.swp
 ```
 
 ## 搜索查找替换
@@ -728,6 +722,67 @@ vim 有强大的内容替换命令，进行内容替换操作时，注意：如�
 `:21,27s/^/#/g` 行首替换`#`替换（增加）掉  
 `:ab mymail asdf@qq.com` 输入`mymail` 摁下空格自动替换成`asdf@qq.com`  
 
+## 文件恢复
+
+非正常关闭vi编辑器时会生成一个`.swp`文件，这个文件是为了避免同一个文件产生两个不同的版本。同时可以用作意外退出恢复历史记录。
+
+```
+vi -r {your file name}
+rm .{your file name}.swp
+```
+
+## 多文档编辑
+
+im 的多文档编辑涉及三个概念：buffer、window、tab，可以对应理解成视角、布局、工作区。vim 中每打开一个文件，vim 就对应创建一个 buffer，多个文件就有多个 buffer，但默认你只看得到最后 buffer 对应的 window，通过插件 [MiniBufExplorer](https://github.com/fholgado/minibufexpl.vim)可以把所有 buffer 罗列出来，并且可以显示多个 buffer 对应的 window。
+
+```bash
+* # 的 buffer 是可见的；
+! # 表示当前正在编辑的 window；
+```
+
+如果你想把多个 window 平铺成多个子窗口可以使用 MiniBufExplorer 的 s 和 v 命令：在某个 buffer 上键入 s 将该 buffer 对应 window 与先前 window 上下排列，键入 v 则左右排列（光标必须在 buffer 列表子窗口内）。
+
+```bash
+d  # 在某个 buffer 上键入 d 删除光标所在的 buffer
+v  # 则左右排列（光标必须在 buffer 列表子窗口内）
+s  # 在某个 buffer 上键入 s 将该 buffer 对应 window 与先前 window 上下排列
+```
+
+## 环境恢复
+
+编辑环境保存与恢复一直是我使用Sublime的理由之一，vim 文档说 viminfo 特性可以恢复书签、session 特性可以恢复书签外的其他项，所以，请确保你的 vim 支持这两个特性，通过下面命令查看是否支持这两个特性：
+
+```
+vim --version | grep mksession
+vim --version | grep viminfo
+```
+
+默认保存/恢复环境步骤如下
+
+```bash
+:wa                      # 第一步，保存所有文档
+:mksession! my.vim       # 第二步，借助 session 保存当前环境
+:wviminfo! my.viminfo    # 第三步，借助 viminfo 保存当前环境
+:qa                      # 第四步，退出 vim
+:source my.vim           # 第五步，恢复环境，进入 vim 后执行
+:rviminfo my.viminfo
+```
+
+具体能保存哪些项，可由 sessionoptions 指定，另外，前面几步可以设定快捷键，在 .vimrc 中增加：
+
+```vim
+" 设置环境保存项
+set sessionoptions="blank,buffers,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
+" 保存 undo 历史
+set undodir=~/.undo_history/
+set undofile
+" 保存快捷键
+map <leader>ss :mksession! my.vim<cr> :wviminfo! my.viminfo<cr>
+" 恢复快捷键
+map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>
+```
+
+⚠️ sessionoptions 无法包含 undo 历史，你得先得手工创建存放 undo 历史的目录（如，.undo_history/）再通过开启 undofile 进行单独设置，一旦开启，每次写文件时自动保存 undo 历史，下次加载在文件时自动恢复所有 undo 历史，不再由 :mksession/:wviminfo 和 :source/:rviminfo 控制。
 
 ## 插件列表
 
@@ -834,6 +889,8 @@ Press ENTER or type command to continue
 - [VimScript学会如何自定义Vim编辑器](http://learnvimscriptthehardway.onefloweroneworld.com/)
 - [一起来说 Vim 语](http://www.jianshu.com/p/a361ce8c97bc)
 - [css-color stopped working after updating Vim to 7.4](https://github.com/ap/vim-css-color/issues/29)
+- [我的VIM配置及说明【K-VIM】](http://www.wklken.me/posts/2013/06/11/linux-my-vim.html)
+- [简明 VIM 练级攻略](http://coolshell.cn/articles/5426.html)
 
 ## 其它人的vimrc配置
 
