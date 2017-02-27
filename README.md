@@ -36,19 +36,21 @@ Only tested on Mac OSx
   - [刷新重载打开的文件](#刷新重载打开的文件)
   - [保存退出](#保存退出)
   - [整页翻页](#整页翻页)
-  - [替换](#替换)
-    - [替换取消](#替换取消)
-    - [快捷替换](#快捷替换)
-    - [精确替换](#精确替换)
   - [开关注释](#开关注释)
   - [工程文件菜单](#工程文件菜单)
   - [Tab操作](#tab操作)
   - [HTML操作](#html操作)
   - [代码片段补全](#代码片段补全)
-- [搜索查找](#搜索查找)
-  - [文件搜索](#文件搜索)
-  - [搜索文本内容](#搜索文本内容)
-  - [快速移动](#快速移动)
+- [文件恢复](#文件恢复)
+- [搜索查找替换](#搜索查找替换)
+  + [搜索](#替换)
+    + [文件搜索](#文件搜索)
+    + [搜索文本内容](#搜索文本内容)
+    + [快速移动](#快速移动)
+  + [替换](#替换)
+    + [替换取消](#替换取消)
+    + [快捷替换](#快捷替换)
+    + [精确替换](#精确替换)
 - [插件列表](#插件列表)
   - [主题风格](#主题风格)
   - [使用界面](#使用界面)
@@ -274,8 +276,8 @@ ctrl + d # 向下半屏
 ctrl + f # 下一页 f 就是`forword` 
 ctrl + b # 上一页 b 就是`backward`  
 
-ctrl + o 
-ctrl + i 
+ctrl + o # 上一个光标的位置
+ctrl + i # 下一个光标的位置
 
 ;t # 通过搜索文件打开文件
 
@@ -467,47 +469,6 @@ ctrl-f # 下一页 f 就是`forword`
 ctrl-b # 上一页 b 就是`backward`  
 ```
 
-### 替换 
-
-#### 替换取消
-
-```bash
-r # → 取代关闭所在处字符  
-R # → 从光标所在处开始替换字符，摁ESC结束  
-u # → 取消上一步操作  
-ctrl + r # → 返回上一步  
-```
-
-#### 快捷替换
-
-可视化模式下选中其中一个，接着键入 ctrl-n，你会发现第二个该字符串也被选中了，持续键入 ctrl-n，你可以选中所有相同的字符串，把这个功能与 ctrlsf 结合。这个功能是上面已经提过的 [多光标编辑](#多光标编辑) 的一个插件提供的功能。默认的快捷键已经被替换掉了，`ctrl-n` 替换成了 `shift-n`，跳过选中`ctrl-k` 换成了`shift-n`。
-
-```vim
-let g:multi_cursor_next_key='<S-n>' " 选中下一个相同内容
-let g:multi_cursor_skip_key='<S-k>' " 跳过当前这个选中
-```
-
-#### 精确替换
-
-vim 有强大的内容替换命令，进行内容替换操作时，注意：如何指定替换文件范围、是否整词匹配、是否逐一确认后再替换。
-
-```
-:[range]s/{pattern}/{string}/[flags]
-```
-
-- 如果在当前文件内替换，[range] 不用指定，默认就在当前文件内；
-- 如果在当前选中区域，[range] 也不用指定，在你键入替换命令时，vim 自动将生成如下命令：`:'<,'>s/{pattern}/{string}/[flags]`
-- 你也可以指定行范围，如，第三行到第五行：`:3,5s/{pattern}/{string}/[flags]`
-- 如果对打开文件进行替换，你需要先通过 `:bufdo` 命令显式告知 vim 范围，再执行替换；
-- 如果对工程内所有文件进行替换，先 `:args **/.cpp */*.h` 告知 vim 范围，再执行替换；
-- 替换当前行第一个 `vivian/` 为 `sky/`，`#` 作为分隔符 `:s #vivian/#sky/# `
-- `:%s/vivian/sky/g`（等同于 `:g/vivian/s//sky/g`） 替换每一行中所有 vivian 为 sky
-- `:n,$s/vivian/sky/g` 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
-
-`:21,27s/^/#/g` 行首替换`#`替换（增加）掉  
-`:ab mymail asdf@qq.com` 输入`mymail` 摁下空格自动替换成`asdf@qq.com`  
-
-
 ### 开关注释
 
 - `;cc`，注释当前选中文本，如果选中的是整行则在每行首添加 `//`，如果选中一行的部分内容则在选中部分前后添加分别 `/**/`；
@@ -657,9 +618,20 @@ let g:UltiSnipsJumpForwardTrigger="<leader><tab>"    " 配向前跳转快捷键
 let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>" " 配向后跳转快捷键
 ```
 
-## 搜索查找
+## 文件恢复
 
-### 文件搜索
+非正常关闭vi编辑器时会生成一个`.swp`文件，这个文件是为了避免同一个文件产生两个不同的版本。同时可以用作意外退出恢复历史记录。
+
+```
+vi -r {your file name}
+rm .{your file name}.swp
+```
+
+## 搜索查找替换
+
+### 搜索
+
+#### 文件搜索
 
 搜索有两个插件可以使用 [wincent/command-t](https://github.com/wincent/command-t) 和 [junegunn/fzf](https://github.com/junegunn/fzf)，`fzf`没有下载下来，这里在使用 `command-t` ，使用的时候记得，进入目录 `cd ~/.vim/plugged/command-t` 运行 `rake make`。
 
@@ -667,7 +639,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>" " 配向后跳转快捷键
 ;t # 启动搜索文件
 ```
 
-### 搜索文本内容
+#### 搜索文本内容
 
 [dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim)，在插件完成安装之后，需要安装另外的工具，才能运行
 
@@ -705,7 +677,7 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 # 输入 ? 摁 Enter键，再摁 n 字母键向，上查找
 ```
 
-### 快速移动
+#### 快速移动
 
 [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 把满足条件的位置用 [;A~Za~z] 间的标签字符标出来，找到你想去的位置再键入对应标签字符即可快速到达。
 
@@ -715,6 +687,47 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 ;;f # 光标后代码定位 <搜索自负> 出现定位信息
 ;;F # 光标前代码定位 <搜索自负> 出现定位信息
 ```
+
+### 替换 
+
+#### 替换取消
+
+```bash
+r # → 取代关闭所在处字符  
+R # → 从光标所在处开始替换字符，摁ESC结束  
+u # → 取消上一步操作  
+ctrl + r # → 返回上一步  
+```
+
+#### 快捷替换
+
+可视化模式下选中其中一个，接着键入 ctrl-n，你会发现第二个该字符串也被选中了，持续键入 ctrl-n，你可以选中所有相同的字符串，把这个功能与 ctrlsf 结合。这个功能是上面已经提过的 [多光标编辑](#多光标编辑) 的一个插件提供的功能。默认的快捷键已经被替换掉了，`ctrl-n` 替换成了 `shift-n`，跳过选中`ctrl-k` 换成了`shift-n`。
+
+```vim
+let g:multi_cursor_next_key='<S-n>' " 选中下一个相同内容
+let g:multi_cursor_skip_key='<S-k>' " 跳过当前这个选中
+```
+
+#### 精确替换
+
+vim 有强大的内容替换命令，进行内容替换操作时，注意：如何指定替换文件范围、是否整词匹配、是否逐一确认后再替换。
+
+```
+:[range]s/{pattern}/{string}/[flags]
+```
+
+- 如果在当前文件内替换，[range] 不用指定，默认就在当前文件内；
+- 如果在当前选中区域，[range] 也不用指定，在你键入替换命令时，vim 自动将生成如下命令：`:'<,'>s/{pattern}/{string}/[flags]`
+- 你也可以指定行范围，如，第三行到第五行：`:3,5s/{pattern}/{string}/[flags]`
+- 如果对打开文件进行替换，你需要先通过 `:bufdo` 命令显式告知 vim 范围，再执行替换；
+- 如果对工程内所有文件进行替换，先 `:args **/.cpp */*.h` 告知 vim 范围，再执行替换；
+- 替换当前行第一个 `vivian/` 为 `sky/`，`#` 作为分隔符 `:s #vivian/#sky/# `
+- `:%s/vivian/sky/g`（等同于 `:g/vivian/s//sky/g`） 替换每一行中所有 vivian 为 sky
+- `:n,$s/vivian/sky/g` 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
+
+`:21,27s/^/#/g` 行首替换`#`替换（增加）掉  
+`:ab mymail asdf@qq.com` 输入`mymail` 摁下空格自动替换成`asdf@qq.com`  
+
 
 ## 插件列表
 
