@@ -21,8 +21,7 @@ vnoremap <Leader>y "+y        " 设置快捷键将选中文本块复制至系统
 nnoremap <Leader>p "+p            " 设置快捷键将系统剪贴板内容粘贴至vim
 
 nnoremap <Leader>q :q<CR>         " 定义快捷键关闭当前分割窗口
-" nmap <Leader>w :w<CR>         " 定义快捷键保存当前窗口内容（与插件冲突，注释了）
-nnoremap <Leader>w :w<CR> 
+nnoremap <Leader>w :w<CR>         " 定义快捷键保存当前窗口内容
 nnoremap <Leader>WQ :wa<CR>:q<CR> " 定义快捷键保存所有窗口内容并退出 vim
 nnoremap <Leader>Q :qa!<CR>       " 不做任何保存，直接退出 vim
 
@@ -50,6 +49,7 @@ set incsearch       " 开启实时搜索功能
 set ignorecase      " 搜索时大小写不敏感
 set nocompatible    " 关闭兼容模式
 set wildmenu        " vim 自身命令行模式智能补全
+set mouse=a         " 设置鼠标滚动
 
 " <<<=========================================
 
