@@ -318,6 +318,8 @@ Shift＋i # 进入列选择批量编辑
     # normal模式下 选中搜索 - 文本中选中关键字
 ;sl # 选中搜索 - 结果列表
 
+;y # 复制到剪切板
+
 # 多光标编辑
 Shift+n # 选中下一个相同字符
 Shift+k # 跳过当前选中的字符
@@ -748,6 +750,18 @@ v  # 则左右排列（光标必须在 buffer 列表子窗口内）
 s  # 在某个 buffer 上键入 s 将该 buffer 对应 window 与先前 window 上下排列
 ```
 
+打开了多个文档，会在窗口的上方生成一个文字版本的Tab，我们需要快速切换不同的文件，需要配置快捷键，将如下信息加入 .vimrc 中：
+
+```vim
+" 显示/隐藏 MiniBufExplorer 窗口
+map <Leader>bl :MBEToggle<cr>
+" buffer 切换快捷键
+map <Leader>bn :MBEbn<cr>  " 正向遍历 buffer
+map <Leader>bp :MBEbp<cr>  " 逆向遍历（光标必须在 buffer 列表子窗口外）
+map <Leader>bd :MBEbd<cr>  " 关闭当前buffer（光标必须在 buffer 列表子窗口外）
+" 在某个 buffer 上键入 d 删除光标所在的 buffer（光标必须在 buffer 列表子窗口内）：
+```
+
 ## 环境恢复
 
 编辑环境保存与恢复一直是我使用Sublime的理由之一，vim 文档说 viminfo 特性可以恢复书签、session 特性可以恢复书签外的其他项，所以，请确保你的 vim 支持这两个特性，通过下面命令查看是否支持这两个特性：
@@ -773,13 +787,10 @@ vim --version | grep viminfo
 ```vim
 " 设置环境保存项
 set sessionoptions="blank,buffers,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
-" 保存 undo 历史
-set undodir=~/.undo_history/
-set undofile
-" 保存快捷键
-map <leader>ss :mksession! my.vim<cr> :wviminfo! my.viminfo<cr>
-" 恢复快捷键
-map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>
+set undodir=~/.undo_history/  " 保存 undo 历史
+set undofile                  " 缺省关闭，局部于缓冲区
+map <leader>ss :mksession! my.vim<cr> :wviminfo! my.viminfo<cr>   " 保存快捷键
+map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>        " 恢复快捷键
 ```
 
 ⚠️ sessionoptions 无法包含 undo 历史，你得先得手工创建存放 undo 历史的目录（如，.undo_history/）再通过开启 undofile 进行单独设置，一旦开启，每次写文件时自动保存 undo 历史，下次加载在文件时自动恢复所有 undo 历史，不再由 :mksession/:wviminfo 和 :source/:rviminfo 控制。
