@@ -693,9 +693,10 @@ map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
 " map <C-Tab> :MBEbn<cr>
 " map <C-S-Tab> :MBEbp<cr>
-map <Leader>bn :MBEbn<cr>
-map <Leader>bp :MBEbp<cr>
-map <Leader>bd :MBEbd<cr>
+nnoremap <Leader>bn :MBEbn<cr>  " 正向遍历 buffer
+nnoremap <Leader>bp :MBEbp<cr>  " 逆向遍历（光标必须在 buffer 列表子窗口外）
+nnoremap <Leader>bd :MBEbd<cr>  " 关闭当前buffer（光标必须在 buffer 列表子窗口外）
+nnoremap <Leader>bb :b#<cr>     " 你之前所在的前一个 buffer）
 
 " <<<<<<<<<<
 
