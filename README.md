@@ -264,11 +264,16 @@ nw  # 窗口切换
 ;kw # 跳转至上方的子窗口
 ;jw # 跳转至下方的子窗口
 
-
 # 可以直接在Tab之间切换。
 gt # 后一个Tab标签
 gT # 前一个Tab标签
 ;q # 关闭一个标签
+
+;fl # 显示文件菜单 file list
+;bn # 正向遍历 buffer
+;bp # 逆向遍历（光标必须在 buffer 列表子窗口外）
+;bd # 关闭当前buffer（光标必须在 buffer 列表子窗口外）
+;bb # 你之前所在的前一个 buffer）
 
 ctrl + y # 向上一行
 ctrl + e # 向下一行
@@ -759,6 +764,7 @@ map <Leader>bl :MBEToggle<cr>
 map <Leader>bn :MBEbn<cr>  " 正向遍历 buffer
 map <Leader>bp :MBEbp<cr>  " 逆向遍历（光标必须在 buffer 列表子窗口外）
 map <Leader>bd :MBEbd<cr>  " 关闭当前buffer（光标必须在 buffer 列表子窗口外）
+map <Leader>bb :b#<cr>     " 你之前所在的前一个 buffer）
 " 在某个 buffer 上键入 d 删除光标所在的 buffer（光标必须在 buffer 列表子窗口内）：
 ```
 
