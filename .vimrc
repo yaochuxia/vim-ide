@@ -50,7 +50,11 @@ set ignorecase      " 搜索时大小写不敏感
 set nocompatible    " 关闭兼容模式
 set wildmenu        " vim 自身命令行模式智能补全
 set mouse=a         " 设置鼠标滚动
-set scrolloff=7     " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
+
+" set scrolloff=7     " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
+" :se so=7            " 上面配置的简写
+
+:se so=999          " 总在中间
 
 " <<<=========================================
 
