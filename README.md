@@ -285,13 +285,15 @@ ctrl + b # 上一页 b 就是`backward`
 ctrl + o # 上一个光标的位置
 ctrl + i # 下一个光标的位置
 
-# 书签设定
+# 书签设定, 标记并跳转
 ma  # 设定/取消当前行名为 x 的标签
 m,  # 自动设定下一个可用书签名
 mda # 删除当前文件中所有独立书签
 m?  # 罗列出当前文件中所有书签，选中后回车可直接跳转；
 mn  #按行号前后顺序，跳转至下个独立书签；
 mp  #按行号前后顺序，跳转至前个独立书签。
+'a  # 跳到书签
+'.  # 最后一次编辑的地方
 
 
 ;t # 通过搜索文件打开文件
@@ -328,7 +330,9 @@ Shift＋i # 进入列选择批量编辑
 ;cA # 在行尾部添加注释符"//"
 ;cu # 取消代码注释
 
+xp  # 左右交换光标处两字符的位置
 :200,320 join # 合并第200~320行
+J  # 选中多行合并
 
 ;sp # 选中搜索 - 文本中选中关键字
     # normal模式下 选中搜索 - 文本中选中关键字
@@ -680,14 +684,77 @@ vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
 # 使用 p 
 ```
 
-基本搜索，这种搜索不需要依赖任何插件，输入 <kbd>/</kbd> 再输入需要搜索的内容，摁 <kbd>Enter</kbd> 键，将会高亮所有搜索的内容，在英文状态下摁 <kbd>n</kbd> 字母键向下查找
+基本搜索，这种搜索不需要依赖任何插件，输入 <kbd>/</kbd> 再输入需要搜索的内容，摁 <kbd>Enter</kbd> 键，将会高亮所有搜索的内容，在英文状态下摁 <kbd>n</kbd> 字母键向下查找，下次打开文件时，这些字符串仍然高亮显示，使用命令`:nohl`取消高亮显示。
+
+`/pattern<Enter>`：向下查找pattern匹配字符串   
+`?pattern<Enter>`：向上查找pattern匹配字符串，使用了查找命令之后，使用如下两个键快速查找：  
+`n`：按照同一方向继续查找   
+`N`：按照反方向查找   
 
 ```shell
-/搜索内容
+/^abc<Enter>       # 查找以abc开始的行 
+/test$<Enter>      # 查找以abc结束的行 
+//^test<Enter>     # 查找^tabc字符串
+:s/vivian/sky/     # 替换当前行第一个 vivian 为 sky
+:s/vivian/sky/g    # 替换当前行所有 vivian 为 sky
+:n,$s/vivian/sky/  # 替换第 n 行开始到最后一行中每一行的第一个 vivian 为 sky
+:n,$s/vivian/sky/g # 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
+                   #（n 为数字，若 n 为 .，表示从当前行开始到最后一行）
+:%s/vivian/sky/  #（等同于 :g/vivian/s//sky/） 替换每一行的第一个 vivian 为 sky
+:%s/vivian/sky/g #（等同于 :g/vivian/s//sky/g） 替换每一行中所有 vivian 为 sky
+
+:s#vivian/#sky/#      # 替换当前行第一个 vivian/ 为 sky/
+:%s+/oradata/apras/+/user01/apras1+ 
+#（使用+ 来 替换 / ）： /oradata/apras/替换成/user01/apras1/
+
+:s/str1/str2/          # 用字符串 str2 替换行中首次出现的字符串 str1
+:s/str1/str2/g         # 用字符串 str2 替换行中所有出现的字符串 str1
+:.,$ s/str1/str2/g     # 用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1
+:1,$ s/str1/str2/g     # 用字符串 str2 替换正文中所有出现的字符串 str1
+:g/str1/s//str2/g      # 功能同上
+
+//<abc  # 查找以test开始的字符串 
+/abc/>  # 查找以test结束的字符串 
+
+$       # 匹配一行的结束
+^       # 匹配一行的开始
+/<      # 匹配一个单词的开始，例如//<abc<Enter>:查找以abc开始的字符串
+/>      # 匹配一个单词的结束，例如/abc/><Enter>:查找以abc结束的字符串 
+
+*       # 匹配0或多次
+/+      # 匹配1或多次
+/=      # 匹配0或1次
+
+.       # 匹配除换行符以外任意字符    
+/a      # 匹配一个字符
+/d      # 匹配任一数字      
+/u      # 匹配任一大写字母
+
+[]      # 匹配范围，如t[abcd]s 匹配tas tbs tcs tds
+/{}     # 重复次数，如a/{3,5} 匹配3~5个a
+/( /)   # 定义重复组，如a/(xy/)b 匹配ab axyb axyxyb axyxyxyb ...
+/|      # 或，如：for/|bar 表示匹配for或者bar
+
+/%20c   # 匹配第20列
+/%20l   # 匹配第20行
 
 # 切换 向上和向下搜索
 # 输入 / 摁 Enter键，再摁 n 字母键向，下查找
 # 输入 ? 摁 Enter键，再摁 n 字母键向，上查找
+```
+
+上面是全文搜索，下面是简单的单行搜索
+
+```shell
+fx  # 到第一个x
+2fx # 到第二个x
+Fx  # 往回查找
+```
+
+vim搜索时默认是大小写敏感的，要想实现大小写不敏感的搜索，如果仅仅是对当前打开的文件设置就用`:set ignorecase`，而永久性的设置可以到vimrc配置文件中添加一行
+
+```vim
+set ignorecase
 ```
 
 #### 快速移动
@@ -920,6 +987,8 @@ Press ENTER or type command to continue
 - [css-color stopped working after updating Vim to 7.4](https://github.com/ap/vim-css-color/issues/29)
 - [我的VIM配置及说明【K-VIM】](http://www.wklken.me/posts/2013/06/11/linux-my-vim.html)
 - [简明 VIM 练级攻略](http://coolshell.cn/articles/5426.html)
+- [Vi中的正则表达式](http://tech.idv2.com/2008/07/08/vim-regexp/)
+- [vi替换字符串（zz）](http://blog.csdn.net/aldenphy/article/details/4019486)
 
 ## 其它人的vimrc配置
 
