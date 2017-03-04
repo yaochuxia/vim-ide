@@ -229,7 +229,7 @@ endf
 " 全屏开/关快捷键
 map <silent> <F11> :call ToggleFullscreen()<CR>
 "" 启动 vim 时自动全屏
-"autocmd VimEnter * call ToggleFullscreen()
+autocmd VimEnter * call ToggleFullscreen()
 
 " <<<<<<<<<<
 
@@ -240,7 +240,6 @@ map <silent> <F11> :call ToggleFullscreen()<CR>
  
 set laststatus=2   " 总是显示状态栏
 set ruler          " 显示光标当前位置
-set relativenumber " 开启行号显示
 set number         " 开启行号显示
                    " 显示绝对行号      set number
                    " 取消显示绝对行号   set nonumber
@@ -266,7 +265,7 @@ set hlsearch      " 高亮显示搜索结果
 set guifont=Source\ Code\ Pro\ for\ Powerline:h16 
 
 
-" set nowrap " 禁止折行
+set nowrap " 禁止折行
 
 
 " Plug 'Lokaltog/vim-powerline'
@@ -336,6 +335,12 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 " 快捷键 i 开/关缩进可视化
 nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+
+" 自定义关联可视化 颜色
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " <<<<<<<<<<
 
