@@ -339,6 +339,18 @@ J  # 选中多行合并
 ;sl # 选中搜索 - 结果列表
 
 ;y # 复制到剪切板
+y  # 复制
+yy  # 复制当前行
+nyy # n表示大于1的数字，复制n行
+yw  # 从光标处复制至一个单子/单词的末尾，包括空格
+ye  # 从光标处复制至一个单子/单词的末尾，不包括空格
+y$  # 从当前光标复制到行末
+y0  # 从当前光标位置（不包括光标位置）复制之行首
+y3l # 从光标位置（包括光标位置）向右复制3个字符
+y5G # 将当前行（包括当前行）至第5行（不包括它）复制
+y3B # 从当前光标位置（不包括光标位置）反向复制3个单词
+.  # 粘贴
+p  # 粘贴
 
 # 多光标编辑
 Shift+n # 选中下一个相同字符
@@ -436,12 +448,22 @@ zb # 底端啦~
 
 ```bash
 yy    # → 复制当前行  
-nyy   # → 复制当前行以下n行  
+;y    # → 复制到剪切板
+y     # → 选中复制
+nyy   # → n表示大于1的数字，复制n行
 dd    # → 剪切当前行  
 ndd   # → 剪切当前行以下n 行  
+yw    # → 从光标处复制至一个单子/单词的末尾，包括空格
+ye    # → 从光标处复制至一个单子/单词的末尾，不包括空格
+y$    # → 从当前光标复制到行末
+y0    # → 从当前光标位置（不包括光标位置）复制之行首
+y3l   # → 从光标位置（包括光标位置）向右复制3个字符
+y5G   # → 将当前行（包括当前行）至第5行（不包括它）复制
+y3B   # → 从当前光标位置（不包括光标位置）反向复制3个单词
 p、P  # → 粘贴在当前光标所在行或行上  
 2dd   # → 删除2行  
 3p    # → 粘贴文本3次  
+.     # → 粘贴
 ```
 
 ### 多光标编辑
@@ -995,3 +1017,4 @@ Press ENTER or type command to continue
 - [luofei614/vim-plug](https://github.com/luofei614/vim-plug/blob/master/.vimrc)
 - [yangyangwithgnu/use_vim_as_ide](https://github.com/yangyangwithgnu/use_vim_as_ide/blob/master/.vimrc)
 - [fingertap/vimrc](https://github.com/fingertap/vimrc/blob/master/.vimrc)
+- [barretlee/autoconfig-mac-vimrc](https://github.com/barretlee/autoconfig-mac-vimrc/blob/master/.vimrc)
