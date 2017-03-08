@@ -258,6 +258,9 @@ set hlsearch      " 高亮显示搜索结果
 " set nocompatible  " 不要使用vi的键盘模式，而是vim自己的 
 " set encoding=utf-8
 
+" 在处理未保存或只读文件的时候，弹出确认 
+set confirm 
+
 " <<<<<<<<<<
 
 
