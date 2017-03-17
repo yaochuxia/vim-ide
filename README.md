@@ -79,6 +79,8 @@ Only tested on Mac OSx
 ```shell
 $ git clone https://github.com/jaywcjlove/vim-web.git ~/.vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
+# 创建插件安装目录 plugged
+$ mkdir ~/.vim/plugged
 ```
 
 ### 下载安装插件
